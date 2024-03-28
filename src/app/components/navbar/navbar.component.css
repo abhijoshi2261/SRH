@@ -255,3 +255,129 @@ select option {
     }
 
 }
+
+
+
+
+/* Bottom Navbar which contains All Categories, Menu Pages & Recently viewed products */
+
+
+.bottomNav{
+    background-color: #fff;
+    height: 10vh;
+    border: 1px solid lightgrey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 2.5rem;
+
+}
+
+.categoriesDropdown{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#allCategories{
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5vmax;
+    font-weight: bold;
+    margin: auto;
+    padding-top: 2.5vh;
+}
+
+.categories{
+    width: 10rem;
+    border: none;
+    list-style: none;
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 0.3rem 0.3rem rgba(211, 211, 211, 0.4);
+}
+
+.categories li{
+    border-bottom: 1px solid lightgrey;
+    padding: 0.5rem;
+}
+
+.categories a{
+    color: black;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+.categoriesDropdown select{
+    height: 6vh;
+}
+
+.menuPages ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.pages{
+    list-style: none;
+}
+
+.menuPages a{
+    color: black;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5vmax;
+    font-weight: 600;
+}
+
+.bottomNav a:hover{
+    color: #00A2C2;
+}
+
+.recentView {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    padding-right: 1.3rem;
+}
+
+.recentView a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+
+@media (max-width:1100px) {
+
+    .recentView{
+        display: none;
+    }
+
+    .bottomNav{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .menuPages{
+        padding-right: 1.5rem;
+    }
+
+    .menuPages ul{
+        gap: 1.8rem;
+    }
+}
+
+@media (max-width:600px) {
+    
+    .bottomNav{
+        display: none;
+    }
+    
+}

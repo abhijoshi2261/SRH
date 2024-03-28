@@ -8,7 +8,13 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
 [x: string]: any;
 
+ displayCategory=false;
+
   phoneNumber="+222-1800-2628";
   email='blueskytechcompany@gmail.com';
+
+  showCategory(){
+    this.displayCategory= !this.displayCategory;
+  }
 
 }

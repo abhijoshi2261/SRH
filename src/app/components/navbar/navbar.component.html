@@ -63,3 +63,42 @@
         </div>
     </div>
 </div>
+
+<!-- Lower Navbar Contains menus & categories -->
+
+<div class="bottomNav">
+    <div class="categoriesDropdown">
+        <a (click)="showCategory()" id="allCategories"><i class="ri-menu-line"></i> All Categories <i class="ri-arrow-down-s-line"></i></a>
+        <ul class="categories" *ngIf="displayCategory">
+            <li><a href="">Groceries</a></li>
+            <li><a href="">Bakery</a></li>
+            <li><a href="">Dairy</a></li>
+            <li><a href="">Beverages</a></li>
+            <li><a href="">Snacks</a></li>
+            <li><a href="">Condiments</a></li>
+            <li><a href="">Cereals</a></li>
+            <li><a href="">Detergents</a></li>
+            <li><a href="">Frozen</a></li>
+            <li><a href="">Personal Care</a></li>
+            <li><a href="">Baby Products</a></li>
+        </ul>
+    </div>
+
+    <div class="menuPages">
+        <ul class="pages">
+            <li><a href="">Home</a></li>
+            <li><a href="">Offers</a></li>
+            <li><a href="">Stores</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Career</a></li>
+        </ul>
+    </div>
+
+    <div class="recentView">
+        <a href="#">
+         <i class="ri-history-line"></i>
+         Recent Viewed Products
+        </a>
+    </div>
+</div>

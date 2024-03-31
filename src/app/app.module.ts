@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { WeekTrendingComponent } from './components/week-trending/week-trending.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -12,13 +15,16 @@ import { CarouselComponent } from './components/carousel/carousel.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    CarouselComponent
+    CarouselComponent,
+    CategoriesComponent,
+    WeekTrendingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  exports:[NavbarComponent,CarouselComponent],
+  exports:[NavbarComponent,CarouselComponent,CategoriesComponent,HomeComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

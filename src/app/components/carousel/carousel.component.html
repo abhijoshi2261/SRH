@@ -1,0 +1,13 @@
+<div class="carousel">
+    <div class="carouselContainer">
+        <a (click)="prev()" id="left"><i class="fa-solid fa-chevron-left"></i></a>
+        <div class="text">
+            <p>{{carouselArr[currentIndex].text}}</p>
+        </div>
+        <div class="image">
+            <img [src]="carouselArr[currentIndex].image" [alt]="carouselArr[currentIndex]">
+            <!-- <img src="./assets/product1.jpeg" alt="Carousel Image"> -->
+        </div>
+        <a (click)="next()" id="right"><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+</div>

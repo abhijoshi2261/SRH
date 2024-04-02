@@ -290,6 +290,10 @@ select option {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    z-index: 2;
+    background-color: white;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 #allCategories{

@@ -7,5 +7,23 @@ export interface category{
     name:string,
     image:string,
     productCount:number,
-    alt:string
+    altText:string
+}
+
+export interface weekTrending{
+    image:string,
+    name:string,
+    brand:string,
+    salePrice:number | null,
+    mrp:number,
+    discount: number | undefined
+}
+
+export interface topSelling{
+    image:string,
+    name:string,
+    brand:string,
+    salePrice:number | null,
+    mrp:number,
+    discount: number | undefined
 }

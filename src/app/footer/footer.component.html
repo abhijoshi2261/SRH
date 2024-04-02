@@ -1,0 +1,55 @@
+<hr>
+<div class="footer">
+<div class="facilities">
+    <div class="content">
+        <img src="./assets/freeDelivery.png" alt="Free Delivery Image">
+        <h1>Fast Delivery</h1>
+        <p>Deliver in 24 hours max!</p>
+    </div>
+    <div class="content">
+        <img src="./assets/safePayment.png" alt="Free Delivery Image">
+        <h1>Safe Payment</h1>
+        <p>Visa, Mastercard, PayPal...</p>
+    </div>
+    <div class="content">
+        <img src="./assets/freeReturns.png" alt="Free Delivery Image">
+        <h1>FreeReturns</h1>
+        <p>Free returns within 15 days</p>
+    </div>
+    <div class="content">
+        <img src="./assets/helpCentre.png" alt="Free Delivery Image">
+        <h1>Help Centre</h1>
+        <p>Dedicated 24/7 support</p>
+    </div>
+</div>
+<hr>
+<div class="footerContent">
+    <div class="contactDetails">
+        <h3>Contact Us</h3>
+        <p>Got Question? Call us 24/7</p>
+        <p id="contactNumber">+222-1800-2628</p>
+        <p>20/536, Near Hotel Upvan, Kolhapur Road, Ichalkaranji</p>
+        <p id="email">blueskytechcompany@gmail.com</p>
+        <div class="socialLinks">
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </div>
+    <div class="linkList">
+        <div class="company">
+            <h4>Company</h4>
+            <ul>
+                <li *ngFor="let item of customerService"><a href="#">{{item}}</a></li>
+            </ul>
+        </div>
+        <div class="customer">
+            <h4>Shop By Categories</h4>
+            <ul>
+                <li *ngFor="let item of shopByCategories"><a href="#">{{item}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>

@@ -8,6 +8,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { WeekTrendingComponent } from './components/week-trending/week-trending.component';
 import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -18,13 +19,14 @@ import { HomeComponent } from './components/home/home.component';
     CarouselComponent,
     CategoriesComponent,
     WeekTrendingComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  exports:[NavbarComponent,CarouselComponent,CategoriesComponent,HomeComponent],
+  exports:[NavbarComponent,CarouselComponent,CategoriesComponent,HomeComponent,FooterComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

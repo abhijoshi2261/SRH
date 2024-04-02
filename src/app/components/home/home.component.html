@@ -32,6 +32,96 @@
     </ul>
 </div>
 
+<!-- Trnding This Week -->
+<div class="trendingWeek">
+    <div class="weekHeader">
+        <h2>Top Trending This Week</h2>
+        <a href="#"><small>View All</small></a>
+    </div>
+    <hr>
+    <div class="weekContent">
+        <div class="weekItems" *ngFor="let item of weekTrending">
+            <div class="discount" *ngIf="item.discount">- {{item.discount}}%</div>
+            <div class="actions">
+                <a (click)="addFavourite()"><i class="fa-regular fa-heart"></i></a>
+                <!-- <a (click)="addFavourite()" *ngIf="!favouriteItem"><i class="fa-regular fa-heart"></i></a> -->
+                <!-- <a (click)="addFavourite()" *ngIf="favouriteItem"><i class="fa-solid fa-heart"></i></a> -->
+                <a (click)="addCart()"><i class="ri-shopping-cart-line"></i></a>
+            </div>
+            <div class="weekImage">
+                <img [src]="item.image" alt="Item Image">
+            </div>
+            <hr>
+            <div class="weekDescription">
+                <p id="brand">{{item.brand}}</p>
+                <p id="name">{{item.name}}</p>
+                <!-- <div class="rating">
+                    <a href="#"><i class="fa-regular fa-star"></i></a>
+                    <a href="#"><i class="fa-regular fa-star"></i></a>
+                    <a href="#"><i class="fa-regular fa-star"></i></a>
+                    <a href="#"><i class="fa-solid fa-star"></i></a>
+                    <a href="#"><i class="fa-solid fa-star"></i></a>
+                </div> -->
+                <div class="price" *ngIf="item.salePrice">
+                    <p id="salePrice">{{item.salePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                    <p id="mrp" style="text-decoration: line-through;">{{item.mrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                </div>
+                <div class="price" *ngIf="!item.salePrice">
+                    <!-- <p id="salePrice">{{item.salePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p> -->
+                    <p id="mrp" style="font-size: 1.2rem;">{{item.mrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
+<!-- Top Selling Products -->
+
+<div class="topselling">
+    <div class="topsellingHeader">
+        <h2>Top Selling Products</h2>
+        <a href="#"><small>View All</small></a>
+    </div>
+    <hr>
+    <div class="topsellingContent">
+        <div class="topsellingItems" *ngFor="let item of topSelling">
+            <div class="discount" *ngIf="item.discount">- {{item.discount}}%</div>
+            <div class="actions">
+                <a (click)="addFavourite()"><i class="fa-regular fa-heart"></i></a>
+                <!-- <a (click)="addFavourite()" *ngIf="!favouriteItem"><i class="fa-regular fa-heart"></i></a> -->
+                <!-- <a (click)="addFavourite()" *ngIf="favouriteItem"><i class="fa-solid fa-heart"></i></a> -->
+                <a (click)="addCart()"><i class="ri-shopping-cart-line"></i></a>
+            </div>
+            <div class="topsellingImage">
+                <img [src]="item.image" alt="Item Image">
+            </div>
+            <hr>
+            <div class="topsellingDescription">
+                <p id="brand">{{item.brand}}</p>
+                <p id="name">{{item.name}}</p>
+                <!-- <div class="rating">
+                    <a href="#"><i class="fa-regular fa-star"></i></a>
+                    <a href="#"><i class="fa-regular fa-star"></i></a>
+                    <a href="#"><i class="fa-regular fa-star"></i></a>
+                    <a href="#"><i class="fa-solid fa-star"></i></a>
+                    <a href="#"><i class="fa-solid fa-star"></i></a>
+                </div> -->
+                <div class="price" *ngIf="item.salePrice">
+                    <p id="salePrice">{{item.salePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                    <p id="mrp" style="text-decoration: line-through;">{{item.mrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                </div>
+                <div class="price" *ngIf="!item.salePrice">
+                    <!-- <p id="salePrice">{{item.salePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p> -->
+                    <p id="mrp" style="font-size: 1.2rem;">{{item.mrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- Footer -->
+
+<app-footer></app-footer>

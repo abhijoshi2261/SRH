@@ -7,7 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { WeekTrendingComponent } from './components/week-trending/week-trending.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 

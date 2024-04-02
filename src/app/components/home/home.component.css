@@ -29,8 +29,9 @@
     text-wrap: wrap;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
-    font-size: large;
+    font-size: 2rem;
     margin: 1rem auto;
+    text-align: center;
 }
 
 .image{
@@ -61,6 +62,7 @@
     position: absolute;
     top: 40%;
     left: 2rem;
+    transition: all 0.4s ease-in-out !important;
 }
 
 #right{
@@ -71,6 +73,8 @@
 
 .carouselContainer:hover i{
     display: block;
+    transition-delay: 1s;
+    transition: all 4s ease-in-out !important;
 }
 
 
@@ -117,7 +121,7 @@
 .categories h2{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: underline;
-    text-shadow: 3px 5px rgba(211, 211, 211, 0.7);
+    text-shadow: -0.5rem -0.3rem rgba(211, 211, 211, 0.8);
 }
 
 .head{

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { carousel } from '../dataTypes';
+import { carousel } from 'src/app/dataTypes';
+
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent {
   currentIndex: number = 0;
 
   carouselArr:carousel[]=[
-    {image:'./assets/product1.jpeg', text:'Sample Text1'},
+    {image:'./assets/product1.jpeg', text:'TOP 10 MOST POPULAR Dairy Products offered by swadeshi VIP'},
     {image:'./assets/product2.jpeg', text:'Sample Text2'},
     {image:'./assets/product3.jpeg', text:'Sample Text3'},
     {image:'./assets/product4.jpeg', text:'Sample Text4'},

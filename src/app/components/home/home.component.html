@@ -6,7 +6,7 @@
     <div class="carouselContainer">
         <a (click)="prev()" id="left"><i class="fa-solid fa-chevron-left"></i></a>
         <div class="text">
-            <p>{{carouselArr[currentIndex].text}}</p>
+            <p>{{carouselArr[currentIndex].text | titlecase}}</p>
         </div>
         <div class="image">
             <img [src]="carouselArr[currentIndex].image" [alt]="carouselArr[currentIndex]">

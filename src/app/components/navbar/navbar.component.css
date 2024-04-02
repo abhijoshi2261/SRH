@@ -154,6 +154,9 @@ select option {
     border: none;
     outline: none;
     width: 15rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .searchBar a{

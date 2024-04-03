@@ -1,3 +1,10 @@
+.fixNav{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+
 /* TOP NAVBAR WHICH CONTAINS CONTACT & CUSTOM INFORMATION */
 
 .main {
@@ -283,7 +290,6 @@ select option {
     justify-content: space-between;
     align-items: flex-start;
     padding-left: 2.5rem;
-
 }
 
 .categoriesDropdown{

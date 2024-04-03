@@ -3,12 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
-import { CategoriesComponent } from './components/categories/categories.component';
-import { WeekTrendingComponent } from './components/week-trending/week-trending.component';
-import { HomeComponent } from './components/home/home.component';
-import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './Buyer/components/navbar/navbar.component';
+import { HomeComponent } from './Buyer/components/home/home.component';
+import { FooterComponent } from './Buyer/components/footer/footer.component';
 
 
 
@@ -16,9 +13,6 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    CarouselComponent,
-    CategoriesComponent,
-    WeekTrendingComponent,
     HomeComponent,
     FooterComponent
   ],
@@ -26,7 +20,7 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule
   ],
-  exports:[NavbarComponent,CarouselComponent,CategoriesComponent,HomeComponent,FooterComponent],
+  exports:[NavbarComponent,HomeComponent,FooterComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

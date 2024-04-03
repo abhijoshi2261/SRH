@@ -1,5 +1,3 @@
-<app-navbar></app-navbar>
-
 
 <!-- Carousel Element -->
 <div class="carousel">
@@ -21,15 +19,12 @@
 <!-- Categories Elements -->
 
 <div class="categories">
-    <div class="head">
-        <h2>Categories</h2>
-        <a href="#"><small>ViewAll</small></a>
+    <div class="header"><h1>List of Categories</h1></div>
+    <div class="listCategory">
+        <ul class="container">
+            <li *ngFor="let category of categories" id="items"><img [src]="category.image" alt=""> <p id="productName">{{category.name | titlecase}}</p> <p id="productCount">Products: {{category.productCount}}</p></li>
+        </ul>
     </div>
-    <ul class="categotyList">
-        <div class="categoryItem">
-            <li *ngFor="let category of categories"><img [src]="category.image" alt="category.altText"> <p id="categoryName">{{category.name | titlecase}}</p> <p id="productCount" >Product Count is: {{category.productCount}}</p></li>
-        </div>
-    </ul>
 </div>
 
 <!-- Trnding This Week -->

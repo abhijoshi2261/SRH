@@ -36,18 +36,18 @@ export class HomeComponent {
 
 
   
-  categories:category[]=[
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
-    {name:"grocery",image:'./assets/logo.png',productCount:2,altText:"Categoory Thumbnail Image"},
+  categories:any[]=[
+    {name:"Groceries",image:'./assets/grocery.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Bakery",image:'./assets/bakery.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Dairy",image:'./assets/dairy.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Beverages",image:'./assets/beverages.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Snacks",image:'./assets/snacks.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Condiments",image:'./assets/condiments.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Cereals",image:'./assets/cereals.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Detergents",image:'./assets/detergents.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Frozen",image:'./assets/frozen.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Personal Care",image:'./assets/personlCare.png',productCount:2,altText:"Categoory Thumbnail Image"},
+    {name:"Baby Products",image:'./assets/babyCare.png',productCount:2,altText:"Categoory Thumbnail Image"},
 
   ]
 

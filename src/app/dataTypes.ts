@@ -11,6 +11,7 @@ export interface category{
 }
 
 export interface weekTrending{
+    id:number,
     image:string,
     name:string,
     brand:string,
@@ -26,4 +27,15 @@ export interface topSelling{
     salePrice:number | null,
     mrp:number,
     discount: number | undefined
+}
+
+export interface cartItem{
+    id:number,
+    image:string,
+    name:string,
+    brand:string,
+    salePrice:number | null,
+    mrp:number,
+    discount: number | undefined
+    quantity:number
 }

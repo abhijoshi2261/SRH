@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './Buyer/components/navbar/navbar.component';
 import { HomeComponent } from './Buyer/components/home/home.component';
 import { FooterComponent } from './Buyer/components/footer/footer.component';
+import { CartComponent } from './Buyer/components/cart/cart.component';
+import { ProductListComponent } from './Buyer/components/product-list/product-list.component';
 
 
 
@@ -14,7 +16,9 @@ import { FooterComponent } from './Buyer/components/footer/footer.component';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

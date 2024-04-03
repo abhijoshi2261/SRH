@@ -31,7 +31,7 @@
 <div class="trendingWeek">
     <div class="weekHeader">
         <h2>Top Trending This Week</h2>
-        <a href="#"><small>View All</small></a>
+        <a routerLink="productList"><small>View All</small></a>
     </div>
     <hr>
     <div class="weekContent">
@@ -41,7 +41,7 @@
                 <a (click)="addFavourite()"><i class="fa-regular fa-heart"></i></a>
                 <!-- <a (click)="addFavourite()" *ngIf="!favouriteItem"><i class="fa-regular fa-heart"></i></a> -->
                 <!-- <a (click)="addFavourite()" *ngIf="favouriteItem"><i class="fa-solid fa-heart"></i></a> -->
-                <a (click)="addCart()"><i class="ri-shopping-cart-line"></i></a>
+                <a routerLink="addCart"><i class="ri-shopping-cart-line"></i></a>
             </div>
             <div class="weekImage">
                 <img [src]="item.image" alt="Item Image">
@@ -77,7 +77,7 @@
 <div class="topselling">
     <div class="topsellingHeader">
         <h2>Top Selling Products</h2>
-        <a href="#"><small>View All</small></a>
+        <a routerLink="productList"><small>View All</small></a>
     </div>
     <hr>
     <div class="topsellingContent">
@@ -87,7 +87,7 @@
                 <a (click)="addFavourite()"><i class="fa-regular fa-heart"></i></a>
                 <!-- <a (click)="addFavourite()" *ngIf="!favouriteItem"><i class="fa-regular fa-heart"></i></a> -->
                 <!-- <a (click)="addFavourite()" *ngIf="favouriteItem"><i class="fa-solid fa-heart"></i></a> -->
-                <a (click)="addCart()"><i class="ri-shopping-cart-line"></i></a>
+                <a routerLink="addCart"><i class="ri-shopping-cart-line"></i></a>
             </div>
             <div class="topsellingImage">
                 <img [src]="item.image" alt="Item Image">

@@ -1,0 +1,39 @@
+<div class="cartPageHeader">
+  <h2>Your Cart Items!</h2>
+</div>
+
+<div class="cartPageItems">
+  <table>
+    <tr>
+      <th>Sr.No</th>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Amount</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let item of cartItems; let i = index">
+      <td></td>
+      <td>{{ item.name }}</td>
+      <td id="quantity" *ngIf="item.salePrice">
+        <button (click)="remove(i, item.quantity, item.salePrice)">-</button>
+        {{ item.quantity }}
+        <button (click)="add(i, item.quantity, item.salePrice)">+</button>
+      </td>
+      <td id="quantity" *ngIf="!item.salePrice">
+        <button (click)="remove(i, item.quantity, item.mrp)">-</button>
+        {{ item.quantity }}
+        <button (click)="add(i, item.quantity, item.mrp)">+</button>
+      </td>
+      <td *ngIf="item.salePrice">{{ item.quantity * item.salePrice }}</td>
+      <td *ngIf="!item.salePrice">{{ item.quantity * item.mrp }}</td>
+      <td>
+        <i class="fa-regular fa-trash-can" (click)="deleteItems()"></i>
+        <i class="fa-regular fa-eye" (click)="viewProduct()"></i>
+      </td>
+    </tr>
+    <tr *ngFor="let item of cartItems"></tr>
+  </table>
+  <div class="cartFooter">
+    {{ subTotal }}
+  </div>
+</div>

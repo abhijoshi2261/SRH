@@ -1,0 +1,163 @@
+
+
+.productList{
+    width: 90vw;
+    /* border: 1px solid gray; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.productListHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+.productListHeader h2{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+    /* text-shadow: -0.5rem -0.3rem rgba(211, 211, 211, 0.8); */
+}
+
+
+.productListHeader a{
+    text-decoration: none;
+    grid-template-columns: auto auto auto auto auto auto;
+    color: #00A2C2;
+}
+
+.productListHeader small{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+.productListContent{
+    width: 100%;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    align-items: center;
+    justify-self: center;
+    margin: 1rem;
+    
+}
+
+.productListItems{
+    height: auto;
+    width: 13rem;
+    /* border: 1px solid rgba(119, 136, 153, 0.973); */
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.productListImage{
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.productListImage:hover{
+    transform: scale(1.1);
+}
+
+hr{
+    margin: 0;
+    display: none;
+}
+
+.productListImage img{
+    height: 8rem;
+    width: 8rem;
+    /* padding: 1rem; */
+    /* box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem  rgba(119, 136, 153, 0.973) ; */
+
+}
+
+.productListDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:0rem 0.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#name{
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+.rating{
+    text-align: center;
+}
+
+.price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#mrp{
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0;
+}
+
+#salePrice{
+    font-size: 1.2rem;
+    color: #00A2C2;
+    margin: 0;
+}
+
+#brand{
+    margin: 0;
+    margin-bottom: 0.2rem;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.discount{
+    /* border: 1px solid red; */
+    border-radius: 0.5rem;
+    width: 2.5rem;
+    text-align: center;
+    line-height:0.9rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    position: sticky;
+    left: 2rem;
+    background-color: crimson;
+    color: white;
+    z-index: 1;
+}
+
+.actions{
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.actions a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+    display: none;
+    color: crimson;
+}
+
+.productListItems:hover a{
+    display: block;
+}

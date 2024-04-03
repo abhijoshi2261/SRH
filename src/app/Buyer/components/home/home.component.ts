@@ -52,11 +52,11 @@ export class HomeComponent {
   ]
 
   weekTrending:weekTrending[]=[
-    { image:'./assets/shampoo.jpg',name:'Shampoo',brand:'XYZ BRAND',salePrice:200,mrp:300,discount:2},
-    { image:'./assets/perfume.jpg',name:'Perfume',brand:'XYZ BRAND',salePrice:null,mrp:900,discount:0},
-    { image:'./assets/nivea combo.jpg',name:'nivea body care combo',brand:'XYZ BRAND',salePrice:1000,mrp:1500,discount:0},
-    { image:'./assets/men shoes.jpg',name:'Comfortable Office Shoes with brown',brand:'XYZ BRAND',salePrice:1200,mrp:1800,discount:0},
-    { image:'./assets/iphone.jpg',name:'IPhone 14 pro max red',brand:'XYZ BRAND',salePrice:105000,mrp:135000,discount:0},
+    { id:1,image:'./assets/shampoo.jpg',name:'Shampoo',brand:'XYZ BRAND',salePrice:200,mrp:300,discount:2},
+    { id:2,image:'./assets/perfume.jpg',name:'Perfume',brand:'XYZ BRAND',salePrice:null,mrp:900,discount:0},
+    { id:3,image:'./assets/nivea combo.jpg',name:'nivea body care combo',brand:'XYZ BRAND',salePrice:1000,mrp:1500,discount:0},
+    { id:4,image:'./assets/men shoes.jpg',name:'Comfortable Office Shoes with brown',brand:'XYZ BRAND',salePrice:1200,mrp:1800,discount:0},
+    { id:5,image:'./assets/iphone.jpg',name:'IPhone 14 pro max red',brand:'XYZ BRAND',salePrice:105000,mrp:135000,discount:0},
   ]
 
   favouriteItem:boolean=false;

@@ -17,6 +17,23 @@ hr{
     text-align: center;
 }
 
+.content img{
+    height: 2rem;
+    width: 2rem;
+}
+
+.content h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+.content p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8rem;
+}
+
+
+
 .socialLinks{
     display: flex;
     justify-content: space-around;

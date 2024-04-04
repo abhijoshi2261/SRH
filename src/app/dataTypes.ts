@@ -39,3 +39,8 @@ export interface cartItem{
     discount: number | undefined
     quantity:number
 }
+
+export interface login{
+    loginEmail:string,
+    loginPassword:string
+}

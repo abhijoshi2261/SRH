@@ -3,3 +3,13 @@ body{
     margin: 0;
     height: 100vh;
 }
+
+.errorMessage{
+    color: red;
+}
+
+.mandatory::before{
+    content: "*";
+    color: red;
+    float: right;
+}

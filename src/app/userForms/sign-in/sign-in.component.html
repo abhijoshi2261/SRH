@@ -1,0 +1,170 @@
+<div class="userForms">
+  <div class="signUpContainer" *ngIf="!login">
+    <h1>SignUp Form</h1>
+    <form [formGroup]="signUpForm" (ngSubmit)="userSignUp(signUpForm.value)">
+      <div class="name">
+        <label for="name" class="mandatory" style="width: fit-content;">Name:</label>
+        <div class="inputfields">
+          <div class="fname">
+            <input
+            type="text"
+            name="name"
+            formControlName="firstName"
+            placeholder="Enter First Name"
+          />
+          <span *ngIf="signUpControls['firstName'].invalid && signUpControls['firstName'].touched" class="errorMessage">First Name is Required</span>
+          </div>
+          <div class="lname">
+            <input
+            type="text"
+            name="name"
+            formControlName="lastName"
+            placeholder="Enter Last Name"
+          />
+          <span *ngIf="signUpControls['lastName'].invalid && signUpControls['lastName'].touched"class="errorMessage">Last Name is Required</span>
+          </div>
+        </div>
+        <!-- <span *ngIf="signUpControls['lastName'].invalid && signUpControls['lastName'].touched || signUpControls['firstName'].invalid && signUpControls['firstName'].touched" class="errorMessage">First Name & Last Name is Required</span> -->
+      </div>
+
+
+      <div class="contactDetails">
+        <div class="details"><div class="email">
+            <label for="email" class="mandatory" style="width: fit-content;">EmailID:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              formControlName="email"
+              placeholder="Enter Your EmailID"
+            />
+            <span *ngIf="signUpControls['email'].invalid && signUpControls['email'].touched || (signUpControls['email'].invalid && signUpControls['email'].touched)" class="errorMessage">Email-ID is Required</span>
+          </div>
+          <div class="mobile">
+            <label for="mobileNo" class="mandatory" style="width: fit-content;">Mobile No.:</label>
+            <input
+              type="text"
+              name="mobileNo"
+              id="mobileNo"
+              formControlName="mobileNo"
+              placeholder="Enter Your Mobile no."
+              maxlength="10"
+            />
+            <span *ngIf="signUpControls['mobileNo'].invalid && signUpControls['mobileNo'].touched ||  (signUpControls['mobileNo'].invalid && signUpControls['mobileNo'].touched)" class="errorMessage">Valid Mobile No. Required</span>
+          </div>
+        </div>
+        <!-- <span *ngIf="signUpControls['email'].invalid && signUpControls['email'].touched || signUpControls['mobileNo'].invalid && signUpControls['mobileNo'].touched" class="errorMessage">Email-ID & Mobile No. Required</span> -->
+      </div>
+      
+
+
+
+      <div class="password">
+        <div class="newPassword">
+          <label for="newPassword" class="test" style="width: fit-content;">New Passsword: <span class="mandatory"></span></label>
+          <div class="inputs">
+            <input
+              type="password"
+              name="newPassword"
+              id="newPassword"
+              placeholder="Enter New Passwrd"
+              formControlName="newPassword"
+              *ngIf="!NewPassword"
+            />
+            <input
+              type="text"
+              name="newPassword"
+              id="newPassword"
+              placeholder="Enter New Passwrd"
+              formControlName="newPassword"
+              *ngIf="NewPassword"
+            />
+            <i class="fa-regular fa-eye" *ngIf="NewPassword" (click)="showNewPassword()"></i>
+            <i class="fa-regular fa-eye-slash" *ngIf="!NewPassword" (click)="showNewPassword()"></i>
+          </div>
+          <span *ngIf="signUpControls['newPassword'].invalid && signUpControls['newPassword'].touched ||  (signUpControls['newPassword'].invalid && signUpControls['newPassword'].touched)" class="errorMessage">New Password is Required</span>
+        </div>
+        <div class="confirmPassword">
+          <label for="confirmPassword" class="test" >Confirm New Passsword: <span class="mandatory"></span></label>
+          <div class="inputs">
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm New Password"
+              formControlName="confirmPassword"
+              *ngIf="!ConfirmPassword"
+            />
+            <input
+              type="text"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm New Password"
+              formControlName="confirmPassword"
+              *ngIf="ConfirmPassword"
+            />
+            <i class="fa-regular fa-eye" *ngIf="ConfirmPassword" (click)="showConfirmPassword()"></i>
+            <i class="fa-regular fa-eye-slash" *ngIf="!ConfirmPassword" (click)="showConfirmPassword()"></i>
+          </div>
+          <span *ngIf="signUpControls['confirmPassword'].invalid && signUpControls['confirmPassword'].touched ||  (signUpControls['confirmPassword'].invalid && signUpControls['confirmPassword'].touched)" class="errorMessage">Confirm Password is Required</span>
+        </div>
+      </div>
+
+      <button>Sign Up</button>
+
+      <a (click)="formChange()">Already Have an Account? Click here</a>
+    </form>
+  </div>
+
+  <!-- Login Form -->
+  <div class="loginContainer" *ngIf="login">
+    <h1>Login Form</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="userLogin(loginForm.value)">
+        <p class="errorMessage">{{credentialsError}}</p>
+      <div class="loginEmail">
+        <label for="email" class="mandatory" style="width: fit-content;">Email-ID:</label>
+        <input
+          type="text"
+          name="loginEmail"
+          id="loginEmail"
+          placeholder="Enter Your Registered Email-ID"
+          formControlName="loginEmail"
+        />
+        <span *ngIf="loginControls['loginEmail'].invalid && loginControls['loginEmail'].touched ||  (loginControls['loginEmail'].invalid && loginControls['loginEmail'].touched)" class="errorMessage">New Password is Required</span>
+      </div>
+
+      <div class="loginPassword">
+        <label for="loginPassword" class="mandatory" style="width: fit-content;">Password:</label>
+
+        <div class="loginInputs">
+          <input
+            type="password"
+            name="loginPassword"
+            id="loginPassword"
+            placeholder="Enter Password"
+            formControlName="loginPassword"
+            *ngIf="!LoginPssword"
+            
+          />
+
+          <input
+            type="text"
+            name="loginPassword"
+            id="loginPassword"
+            placeholder="Enter Password"
+            formControlName="loginPassword"
+            *ngIf="LoginPssword"
+          />
+
+          <i class="fa-regular fa-eye" *ngIf="LoginPssword" (click)="showLoginPassword()"></i>
+          <i class="fa-regular fa-eye-slash" *ngIf="!LoginPssword" (click)="showLoginPassword()"></i>
+        </div>
+        <span *ngIf="loginControls['loginPassword'].invalid && loginControls['loginPassword'].touched ||  (loginControls['loginPassword'].invalid && loginControls['loginPassword'].touched)" class="errorMessage">New Password is Required</span>
+      </div>
+
+      <button>Login</button>
+
+      <a (click)="formChange()">Don't Have an Account? Click here</a>
+    </form>
+  </div>
+</div>

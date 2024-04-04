@@ -1,0 +1,23 @@
+{
+  "products": [],
+  "users": [
+    {
+      "id": "2dbf",
+      "firstName": "Abhishek",
+      "lastName": "Joshi",
+      "email": "abhi@test.com",
+      "mobileNo": 8149916360,
+      "newPassword": "Abhi123",
+      "confirmPassword": "Abhi123"
+    },
+    {
+      "id": "345d",
+      "firstName": "Abhishek",
+      "lastName": "Joshi",
+      "email": "abhsihek@joshi.com",
+      "mobileNo": "8149916360",
+      "newPassword": "123",
+      "confirmPassword": "123"
+    }
+  ]
+}

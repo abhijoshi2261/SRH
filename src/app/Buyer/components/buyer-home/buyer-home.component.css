@@ -112,7 +112,6 @@
 .categories{
     width: 90vw;
     margin: 0 auto;
-    z-index: 1  ;
 }
 
 .header{
@@ -131,15 +130,13 @@ h1{
 }
 
 .container{
-    /* border: 1px solid grey; */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));;
 }
 
 #items{
-    height: auto;
+    /* height: auto; */
     width: fit-content;
-    /* border: 1px solid grey; */
     display: flex;
     flex-direction: column;
     align-items: center;

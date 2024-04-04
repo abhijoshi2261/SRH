@@ -1,0 +1,170 @@
+.userForms{
+    background-image: './assets/background.png';
+    padding: 1rem;
+    /* height: 90%; */
+}
+
+.signUpContainer{
+    /* border: 1px solid black; */
+    height: auto;
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 2rem; */
+    padding: 0;
+}
+
+.signUpContainer form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.signUpContainer input{
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.3rem;
+    border-bottom: 0.1rem ridge crimson;
+}
+
+.name{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputfields{
+    display: flex;
+    gap: 2rem;
+}
+
+.fname{
+    display: flex;
+    flex-direction: column;
+}
+
+.lname{
+    display: flex;
+    flex-direction: column;
+}
+
+.contactDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+.email{
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile{
+    display: flex;
+    flex-direction: column;
+}
+
+.details{
+    display: flex;
+    gap: 2rem;
+}
+
+.password{
+    display: flex;
+    gap: 2rem;
+}
+
+.inputs{
+    position: relative;
+}
+
+.inputs i{
+    position: absolute;
+    right: 0.3rem;
+    top: 0.1rem;
+}
+
+
+
+/* Login Form Styles */
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+    margin: auto;
+    width: fit-content;
+    padding: 2rem;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loginContainer form{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginContainer input{
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.3rem;
+    border-bottom: 0.1rem ridge crimson;
+}
+
+.loginEmail{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.3rem 0;
+}
+
+.loginPassword{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.3rem 0;
+
+}
+
+button{
+    background: crimson;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: none;
+    margin: 0.5rem 0;
+    box-shadow: 0.3rem 0.2rem lightgray;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+.loginInputs{
+    position: relative;
+}
+
+.loginInputs i{
+    position: absolute;
+    right: 0;
+}
+
+.test {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.firstName{
+    display: flex;
+    flex-direction: column;
+    /* text-decoration: line-through; */
+}
+
+.lastName{
+    display: flex;
+    flex-direction: column;
+}

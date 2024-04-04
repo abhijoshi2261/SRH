@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { carousel, category, topSelling, weekTrending } from 'src/app/dataTypes';
-
+import { carousel, topSelling, weekTrending } from 'src/app/dataTypes';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-buyer-home',
+  templateUrl: './buyer-home.component.html',
+  styleUrls: ['./buyer-home.component.css']
 })
-export class HomeComponent {
+export class BuyerHomeComponent {
 
   currentIndex: number = 0;
 

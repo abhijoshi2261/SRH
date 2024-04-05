@@ -5,6 +5,9 @@ import { ProductListComponent } from './Buyer/components/product-list/product-li
 import { BuyerHomeComponent } from './Buyer/components/buyer-home/buyer-home.component';
 import { SignInComponent } from './userForms/sign-in/sign-in.component';
 import { AuthGuard } from './services/auth-guard.guard';
+import {AdminModule} from './Admin/admin.module'
+import { FooterComponent } from './Buyer/components/footer/footer.component';
+
 
 const routes: Routes = [
   {
@@ -22,6 +25,13 @@ const routes: Routes = [
   {
     path:'productList',
     component:ProductListComponent
+  },
+  {
+    path:'admin',loadChildren: () => import('./Admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path:'footer',
+    component:FooterComponent
   }
 ];
 

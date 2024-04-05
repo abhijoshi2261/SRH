@@ -45,6 +45,7 @@ export class SignInComponent {
       mobileNo : new FormControl('',[Validators.required, Validators.maxLength(10), Validators.minLength(10)]),
       newPassword : new FormControl('',[Validators.required]),
       confirmPassword : new FormControl('',[Validators.required]),
+      role: new FormControl('')
     })
 
     loginForm = new FormGroup({
@@ -62,14 +63,19 @@ export class SignInComponent {
 
     
     userSignUp(data:any){
+      data.role='customer';
       if(this.signUpForm.valid){
-        this.user.userSignUp(data).subscribe((result)=>{
-          console.log(result);
-        })
+        this.user.userSignUp(data);
+        // .subscribe((result)=>{
+        //   console.log(result);
+        // })
       }else{
         this.signUpForm.markAllAsTouched();
         console.log('form is not cubmitted');
       }
+
+      console.log(data.role);
+      
       
     }
 

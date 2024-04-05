@@ -81,3 +81,8 @@ hr{
 .company{
     padding: 0 1rem;
 }
+
+#email{
+    color: black;
+    text-decoration: none;
+}

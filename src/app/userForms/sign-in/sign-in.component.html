@@ -1,7 +1,28 @@
 <div class="userForms">
-  <div class="signUpContainer" *ngIf="!login">
+  <div class="signUpContainer" *ngIf="login">
     <h1>SignUp Form</h1>
     <form [formGroup]="signUpForm" (ngSubmit)="userSignUp(signUpForm.value)">
+
+        <!-- <div class="role">
+          <div class="radioContent">
+            <div class="heading">
+              <p class="mandatory">You are : </p>
+            </div>
+            <div class="radioBtn">
+              <div class="customer">
+                <label for="customer">Customer </label>
+                <input type="radio" name="role" value="customer" id="customer" formControlName="role">
+              </div>
+    
+              <div class="admin">
+                <label for="admin">Admin</label>
+                <input type="radio" name="role" id="admin" value="admin" formControlName="role">
+              </div>
+            </div>
+          </div>
+          <span *ngIf="signUpControls['role'].invalid && signUpControls['role'].touched || (signUpControls['role'].invalid && signUpControls['role'].dirty)" class="errorMessage"> Please Select Your Designation</span>
+        </div> -->
+
       <div class="name">
         <label for="name" class="mandatory" style="width: fit-content;">Name:</label>
         <div class="inputfields">
@@ -111,13 +132,13 @@
       </div>
 
       <button>Sign Up</button>
-
-      <a (click)="formChange()">Already Have an Account? Click here</a>
     </form>
+    <a (click)="formChange()">Already Have an Account? Click here</a>
+
   </div>
 
   <!-- Login Form -->
-  <div class="loginContainer" *ngIf="login">
+  <div class="loginContainer" *ngIf="!login">
     <h1>Login Form</h1>
     <form [formGroup]="loginForm" (ngSubmit)="userLogin(loginForm.value)">
         <p class="errorMessage">{{credentialsError}}</p>

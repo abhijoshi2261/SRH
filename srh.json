@@ -1,23 +1,205 @@
 {
-  "products": [],
-  "users": [
+  "carousel": [
     {
-      "id": "2dbf",
-      "firstName": "Abhishek",
-      "lastName": "Joshi",
-      "email": "abhi@test.com",
-      "mobileNo": 8149916360,
-      "newPassword": "Abhi123",
-      "confirmPassword": "Abhi123"
+      "image": "./assets/product1.jpeg",
+      "text": "TOP 10 MOST POPULAR Dairy Products offered by swadeshi VIP"
+    },
+    { "image": "./assets/product2.jpeg", "text": "Sample Text2" },
+    { "image": "./assets/product3.jpeg", "text": "Sample Text3" },
+    { "image": "./assets/product4.jpeg", "text": "Sample Text4" },
+    { "image": "./assets/product5.jpeg", "text": "Sample Text5" }
+  ],
+
+  "categories": [
+    {
+      "name": "Groceries",
+      "image": "./assets/grocery.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
     },
     {
-      "id": "345d",
+      "name": "Bakery",
+      "image": "./assets/bakery.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    },
+    {
+      "name": "Dairy",
+      "image": "./assets/dairy.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    },
+    {
+      "name": "Beverages",
+      "image": "./assets/beverages.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    },
+    {
+      "name": "Snacks",
+      "image": "./assets/snacks.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    },
+    {
+      "name": "Condiments",
+      "image": "./assets/condiments.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    },
+    {
+      "name": "Cereals",
+      "image": "./assets/cereals.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    },
+    {
+      "name": "Detergents",
+      "image": "./assets/detergents.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    },
+    {
+      "name": "Frozen",
+      "image": "./assets/frozen.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    },
+    {
+      "name": "Personal Care",
+      "image": "./assets/personlCare.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    },
+    {
+      "name": "Baby Products",
+      "image": "./assets/babyCare.png",
+      "productCount": 2,
+      "altText": "Categoory Thumbnail Image"
+    }
+  ],
+  "products": [
+    {
+      "image": "./assets/shampoo.jpg",
+      "name": "Shampoo",
+      "brand": "XYZ BRAND",
+      "salePrice": 200,
+      "mrp": 300,
+      "discount": 2
+    },
+    {
+      "image": "./assets/perfume.jpg",
+      "name": "Perfume",
+      "brand": "XYZ BRAND",
+      "salePrice": null,
+      "mrp": 900,
+      "discount": 0
+    },
+    {
+      "image": "./assets/nivea combo.jpg",
+      "name": "nivea body care combo",
+      "brand": "XYZ BRAN",
+      "salePrice": 1000,
+      "mrp": 1500,
+      "discount": 0
+    },
+    {
+      "image": "./assets/men shoes.jpg",
+      "name": "Comfortable Office Shoes with brown",
+      "brand": "XYZ BRAND",
+      "salePrice": 1200,
+      "mrp": 1800,
+      "discount": 0
+    },
+    {
+      "image": "./assets/iphone.jpg",
+      "name": "IPhone 14 pro max red",
+      "brand": "XYZ BRAND",
+      "salePrice": 105000,
+      "mrp": 135000,
+      "discount": 0
+    }
+  ],
+  "users": [
+    {
+      "id": "461b",
+      "firstName": "Abhishek",
+      "lastName": "Joshi",
+      "email": "abhijoshi2261@gmail.com",
+      "mobileNo": "8149916360",
+      "newPassword": "Abhij@123",
+      "confirmPassword": "Abhij@123",
+      "role": "admin"
+    },
+    {
+      "id": "3fbb",
       "firstName": "Abhishek",
       "lastName": "Joshi",
       "email": "abhsihek@joshi.com",
       "mobileNo": "8149916360",
+      "newPassword": "123456",
+      "confirmPassword": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "39b4",
+      "firstName": "Harsh",
+      "lastName": "Joshi",
+      "email": "harsh@test.com",
+      "mobileNo": "8149916360",
+      "newPassword": "harsh123",
+      "confirmPassword": "harsh123",
+      "role": "customer"
+    },
+    {
+      "id": "2789",
+      "firstName": "Harsh",
+      "lastName": "Joshi",
+      "email": "harsh@joshi.com",
+      "mobileNo": "1234567890",
+      "newPassword": "123456",
+      "confirmPassword": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "212e",
+      "firstName": "Parth",
+      "lastName": "Joshi",
+      "email": "parth@joshi.com",
+      "mobileNo": "1234567890",
       "newPassword": "123",
-      "confirmPassword": "123"
+      "confirmPassword": "123",
+      "role": "customer"
+    },
+    {
+      "id": "52f5",
+      "firstName": "Parth",
+      "lastName": "Joshi",
+      "email": "parth@joshi.com",
+      "mobileNo": "1234567890",
+      "newPassword": "123",
+      "confirmPassword": "123",
+      "role": "customer"
+    },
+    {
+      "id": "4382",
+      "firstName": "Parth",
+      "lastName": "Parth",
+      "email": "parth@joshi.com",
+      "mobileNo": "1234567890",
+      "newPassword": "123",
+      "confirmPassword": "123",
+      "role": "customer"
+    },
+    {
+      "id": "d8d4",
+      "firstName": "Parth",
+      "lastName": "Parth",
+      "email": "harsh@test.com",
+      "mobileNo": "1234567890",
+      "newPassword": "111",
+      "confirmPassword": "111",
+      "role": "customer"
     }
   ]
 }

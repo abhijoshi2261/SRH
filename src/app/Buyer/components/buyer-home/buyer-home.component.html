@@ -4,10 +4,10 @@
     <div class="carouselContainer">
         <a (click)="prev()" id="left"><i class="fa-solid fa-chevron-left"></i></a>
         <div class="text">
-            <p>{{carouselArr[currentIndex].text | titlecase}}</p>
+            <p>{{carouselArr[currentIndex]?.text | titlecase}}</p>
         </div>
         <div class="image">
-            <img [src]="carouselArr[currentIndex].image" [alt]="carouselArr[currentIndex]">
+            <img [src]="carouselArr[currentIndex]?.image" [alt]="carouselArr[currentIndex]">
             <!-- <img src="./assets/product1.jpeg" alt="Carousel Image"> -->
         </div>
         <a (click)="next()" id="right"><i class="fa-solid fa-chevron-right"></i></a>
@@ -35,7 +35,7 @@
     </div>
     <hr>
     <div class="weekContent">
-        <div class="weekItems" *ngFor="let item of weekTrending">
+        <div class="weekItems" *ngFor="let item of topTrending">
             <div class="discount" *ngIf="item.discount">- {{item.discount}}%</div>
             <div class="actions">
                 <a (click)="addFavourite()"><i class="fa-regular fa-heart"></i></a>
@@ -119,4 +119,4 @@
 
 <!-- Footer -->
 
-<app-footer></app-footer>
+<app-footer id="footer"></app-footer>

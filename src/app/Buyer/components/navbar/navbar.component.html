@@ -1,9 +1,9 @@
-<div class="buyerNavbar" *ngIf="userIn">
+<div class="buyerNavbar">
   <!-- /* TOP NAVBAR WHICH CONTAINS CONTACT & CUSTOM INFORMATION */ -->
   <div class="main">
     <div class="contactInfo">
       <a href="#">{{ phoneNumber }}</a>
-      <a href="#">{{ email }}</a>
+      <a [href]="'mailto:' + email">{{ email }}</a>
     </div>
     <div class="customInfo">
       <div class="ourStores">
@@ -53,7 +53,7 @@
       </div>
       <div class="userOption">
         <div class="user">
-          <a routerLink="login"><i class="ri-user-line"></i></a>
+          <a routerLink=""><i class="ri-user-line"></i></a>
           <div class="userDetails">
             <p id="userText">Login</p>
             <p id="userAmount">Account</p>
@@ -69,6 +69,11 @@
             <p id="cartAmount">$0.00</p>
           </div>
         </div>
+        <div class="logout">
+          <a routerLink=""
+            ><i class="fa-solid fa-arrow-right-from-bracket"></i
+          ></a>
+        </div>
       </div>
     </div>
 
@@ -81,28 +86,28 @@
           <i class="ri-arrow-down-s-line"></i
         ></a>
         <ul class="categories" *ngIf="displayCategory">
-          <li><a href="">Groceries</a></li>
-          <li><a href="">Bakery</a></li>
-          <li><a href="">Dairy</a></li>
-          <li><a href="">Beverages</a></li>
-          <li><a href="">Snacks</a></li>
-          <li><a href="">Condiments</a></li>
-          <li><a href="">Cereals</a></li>
-          <li><a href="">Detergents</a></li>
-          <li><a href="">Frozen</a></li>
-          <li><a href="">Personal Care</a></li>
-          <li><a href="">Baby Products</a></li>
+          <li><a routerLink="productList">Groceries</a></li>
+          <li><a routerLink="productList">Bakery</a></li>
+          <li><a routerLink="productList">Dairy</a></li>
+          <li><a routerLink="productList">Beverages</a></li>
+          <li><a routerLink="productList">Snacks</a></li>
+          <li><a routerLink="productList">Condiments</a></li>
+          <li><a routerLink="productList">Cereals</a></li>
+          <li><a routerLink="productList">Detergents</a></li>
+          <li><a routerLink="productList">Frozen</a></li>
+          <li><a routerLink="productList">Personal Care</a></li>
+          <li><a routerLink="productList">Baby Products</a></li>
         </ul>
       </div>
 
       <div class="menuPages">
         <ul class="pages">
-          <li><a href="">Home</a></li>
-          <li><a href="">Offers</a></li>
-          <li><a href="">Stores</a></li>
-          <li><a href="">About Us</a></li>
-          <li><a href="">Contact Us</a></li>
-          <li><a href="">Career</a></li>
+          <li><a routerLink="buyerHome">Home</a></li>
+          <li><a (click)="scrollTO()">Offers</a></li>
+          <li><a routerLink="footer">Stores</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a routerLink="footer">Contact Us</a></li>
+          <li><a href="#">Career</a></li>
         </ul>
       </div>
 
@@ -114,16 +119,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="defualtNavbar" *ngIf="!userIn">
-    <div class="logo">
-        <img src="./assets/logo.png" alt="Logo Image">
-    </div>
-    <div class="menuOptions">
-        <ul class="menuList">
-            <li>Seller SignIn</li>
-            <li>Customer SignIn</li>
-        </ul>
-    </div>
 </div>

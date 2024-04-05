@@ -434,6 +434,6 @@ select option {
     font-size: 1.3rem;
 }
 
-.menuList li{
-    
+.menuList{
+    cursor: pointer;
 }

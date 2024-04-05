@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,7 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent {
+  scrollIntoView(arg0: { behavior: string; }) {
+    throw new Error('Method not implemented.');
+  }
+
+  constructor(private user:UserService){}
+
   companyInfo = ['About Us', 'Our Stores', 'Contact Us', 'My Account'];
+
+  email = this.user.email;
 
   customerService = [
     'Privacy Policy',

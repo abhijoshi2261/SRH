@@ -1,0 +1,31 @@
+Buyer Flow
+
+1. Users Sign In or Go to Buyer Home Page directly
+2. Select Products & add to cart.
+3. Cart list Updated & Count of Cart Badge Increases.
+3. Before checkout buyer should login with credentials / register self.
+4. Cofirm Order before Payment.
+5. Select Delivery type.
+6. Proceed to payment & complete payment.
+7. Receive PopUp of Order Details.
+
+
+Seller Flow
+
+1. Login with credentials / Request Admin to Register Seller.
+2. Watch Orders for their respective store.
+3. Watch stock for respective store.
+4. 
+
+
+
+
+Admin Flow
+
+1. Login with Credentials
+2. Watch all stores stock.
+3. Get notofication for less stock
+4. Order stock Manually by choosing previous Vendors
+5. Create Seller
+6. Product & Stock CRUD operations.
+7.

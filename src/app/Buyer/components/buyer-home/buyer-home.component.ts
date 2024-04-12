@@ -32,7 +32,7 @@ export class BuyerHomeComponent {
 
   next() {
     this.currentIndex<this.carouselArr.length-1?this.currentIndex++:this.currentIndex=0;
-    console.log(this.currentIndex);
+    // console.log(this.currentIndex);
     
   }
 
@@ -76,8 +76,14 @@ export class BuyerHomeComponent {
     this.favouriteItem=true;
   }
 
-  addCart(){
-    alert("product added to Cart");
+  addToCart(item:any){
+      this.product.addToCart(item);
+      // console.log("added to cart ",index);
+        // console.log("product ID",item);
+        
+      // .subscribe((res:any)=>{
+      //   console.log("added to cart ",res);
+      // })
   }
 
 

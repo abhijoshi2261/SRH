@@ -11,6 +11,7 @@ import { SignInComponent } from './userForms/sign-in/sign-in.component';
 import { BuyerHomeComponent } from './Buyer/components/buyer-home/buyer-home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CheckoutComponent } from './Buyer/components/checkout/checkout.component';
 
 
 
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     CartComponent,
     ProductListComponent,
     SignInComponent,
-    BuyerHomeComponent
+    BuyerHomeComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

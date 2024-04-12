@@ -7,19 +7,21 @@ import { SignInComponent } from './userForms/sign-in/sign-in.component';
 import { AuthGuard } from './services/auth-guard.guard';
 import {AdminModule} from './Admin/admin.module'
 import { FooterComponent } from './Buyer/components/footer/footer.component';
+import { CheckboxRequiredValidator } from '@angular/forms';
+import { CheckoutComponent } from './Buyer/components/checkout/checkout.component';
 
 
 const routes: Routes = [
   {
-    path:'',
+    path:'login',
     component:SignInComponent
   },
-  {path:'buyerHome',
+  {path:'',
   component:BuyerHomeComponent,
   // canActivate:[AuthGuard]
   },
   {
-    path:'addCart',
+    path:'cartListing',
     component:CartComponent
   },
   {
@@ -32,6 +34,10 @@ const routes: Routes = [
   {
     path:'footer',
     component:FooterComponent
+  },
+  {
+    path:'checkout',
+    component:CheckoutComponent
   }
 ];
 

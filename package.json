@@ -17,7 +17,8 @@
     "@angular/forms": "^16.2.0",
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
-    "@angular/router": "^16.2.0"
+    "@angular/router": "^16.2.0",
+    "json-server": "^1.0.0-alpha.23"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.12",

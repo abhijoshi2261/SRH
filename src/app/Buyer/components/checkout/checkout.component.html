@@ -1,0 +1,61 @@
+<div class="checkoutContainer">
+    <div class="deliveryType">
+        <h2>Select Delivery Type:</h2>
+        <div class="inputs">
+            <div class="store">
+                <div class="fields"> 
+                    <label for="store">Store Pick-Up</label>
+                    <input type="radio" value="store" name="delivery" id="store" (change)="load('store')">
+                </div>
+            </div>
+            <div class="home">
+                <div class="fields">
+                    <label for="home">Home Delivery</label>
+                    <input type="radio" value="home" name="delivery" id="home" (change)="load('home')">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="additionalInfo">
+        <span *ngIf="!show">Please check Delivery Terms & Conditions</span>
+        <span *ngIf="show">Pickup within 48 Hrs.</span>
+    </div>
+</div>
+
+<div class="checkoutForm" *ngIf="show">
+    <form [formGroup]="homeDelivery">
+        <div class="userInfo">
+            <div class="name">
+                <label for="name">Enter Customer Name:</label>
+                <input type="text" name="name" id="customerName" placeholder="Customer Name" formControlName="customerName">
+                <input type="text" id="customerLastName" placeholder="Customer Last Name" formControlName="customerName">
+            </div>
+            <div class="contactDetails">
+                <label for="contactDetails">Enter Your Contact Details:</label>
+                <input type="text" name="contactDetails" id="mobileNo" placeholder="Mobile No." formControlName="mobileNo">
+                <input type="text" name="contactDetails" id="email" placeholder="Email-Id" formControlName="email">
+            </div>
+        </div>
+        <div class="address">
+            <div class="billingAddress">
+                <label for="address">Enter Billing Address:</label>
+                <input type="text" name="address" id="billingAddressLine1" placeholder="House NO. / Plot No./Appartment Name" formControlName="billingAddressLine1">
+                <input type="text" name="address" id="billingAddressLine2" placeholder="Street Name / Lane No." formControlName="billingAddressLine2">
+                <input type="text" name="address" id="billingAddressLine3" placeholder=" Area Name / Area Address" formControlName="billingAddressLine3">
+                <input type="text" name="city" id="billingAddressCity" placeholder="City" formArrayName="billingAddressCity">
+                <input type="text" name="state" id="billingAddressState" placeholder="State" formArrayName="billingAddressState">
+            </div>
+            <div class="shippingAddress" *ngIf="showShippingAddress">
+                <label for="address">Enter Shipping Address:</label>
+                <input type="text" name="address" id="shippingAddressLine1" placeholder="House NO. / Plot No./Appartment Name" formControlName="shippingAddressLine1">
+                <input type="text" name="address" id="shippingAddressLine2" placeholder="Street Name / Lane No." formControlName="shippingAddressLine2">
+                <input type="text" name="address" id="shippingAddressLine3" placeholder=" Area Name / Area Address" formControlName="shippingAddressLine3">
+                <input type="text" name="city" id="shippingAddressCity" placeholder="City" formArrayName="shippingAddressCity">
+                <input type="text" name="state" id="shippingAddressState" placeholder="State" formArrayName="shippingAddressState">
+            </div>
+        </div>
+        <div class="check">
+            <input type="checkbox" id="checker" formControlName="shippingCheck" [(ngModel)]="isChecked" (change)="addressShow()"> <label for="checker">Shipping Address is Different?</label>
+        </div>
+    </form>
+</div>

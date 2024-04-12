@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { cartItem, topSelling } from 'src/app/dataTypes';
+import { ProductServiceService } from 'src/app/services/product-service.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,31 +11,24 @@ import { cartItem, topSelling } from 'src/app/dataTypes';
 export class CartComponent {
   [x: string]: any;
 
-  constructor(private route: Router) {}
-
-  ngOnInit() {
+  constructor(private route: Router, private product:ProductServiceService) {
+    
     this.total();
   }
 
-  favouriteItem: boolean = false;
+  ngOnInit() {
+    this.total();
+    this.getCartItems();
+  }
+
   subTotal: number = 0;
 
-  addFavourite() {
-    alert('product added to Favourites');
-    this.favouriteItem = true;
-  }
-
-  deleteItems() {
-    alert('product deleted from Cart');
-    this.route.navigate(['produtList']);
-  }
-
-  add(index: number, val: number, price: number) {
+  add(index: number, val: number) {
     this.cartItems[index].quantity++;
     this.total();
   }
 
-  remove(index: number, val: number, price: number) {
+  remove(index: number, val: number) {
     if (val > 1) {
       this.cartItems[index].quantity--;
       this.total();
@@ -43,6 +37,19 @@ export class CartComponent {
 
   viewProduct() {
     this.route.navigate(['produtList']);
+    alert('View Product Called')
+  }
+
+
+  deleteItems(id:any,index:any) {
+    // alert('product deleted from Cart');
+    this.product.removeProduct(id).subscribe((result:any)=>{
+        console.log("after Delete", result);
+        this.cartItems.splice(index,1);
+    })
+
+    // this.cartItems.pop(id);
+    
   }
 
   total() {
@@ -64,36 +71,21 @@ export class CartComponent {
     this.subTotal = subTotal;
   }
 
-  cartItems: cartItem[] = [
-    {
-      id: 1,
-      image: './assets/shampoo.jpg',
-      name: 'Shampoo',
-      brand: 'XYZ BRAND',
-      salePrice: 200,
-      mrp: 300,
-      discount: 2,
-      quantity: 1,
-    },
-    {
-      id: 2,
-      image: './assets/perfume.jpg',
-      name: 'Perfume',
-      brand: 'XYZ BRAND',
-      salePrice: null,
-      mrp: 900,
-      discount: 0,
-      quantity: 1,
-    },
-    {
-      id: 3,
-      image: './assets/nivea combo.jpg',
-      name: 'nivea body care combo',
-      brand: 'XYZ BRAND',
-      salePrice: 1000,
-      mrp: 1500,
-      discount: 0,
-      quantity: 1,
-    },
-  ];
+  cartItems:any=[]
+  getCartItems(){
+    this.product.getCartItems().subscribe((result:any)=>{
+      console.log("Cart Items",result);
+      result.quantity=1;
+      this.cartItems=result;
+      console.log("Final Response",this.cartItems);
+      this.total();
+      
+    })
+  }
+
+
+  checkout(){
+    alert('Do you want to continue with Cart?');
+    this.route.navigate(['checkout']);
+  }
 }

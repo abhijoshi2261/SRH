@@ -1,0 +1,114 @@
+.checkoutContainer{
+    margin: 2.5rem auto;
+    width: 90%;
+    height: auto;
+    border-bottom: 1px solid lightgrey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.deliveryType{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.additionalInfo{
+    font-size: 1rem;
+    margin: 0 auto;
+}
+
+.inputs{
+    display: flex;
+    gap: 5rem;
+    font-size: 1.5rem;
+}
+
+.fields{
+    display: flex;
+    align-items: center;
+}
+
+
+input[type=radio] {
+    border: 0px;
+    width: 1.5rem;
+    height: 1.5em;
+}
+
+.checkoutForm{
+    width: 90%;
+    /* border: 1px solid red; */
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.name{
+    display: flex;
+    gap: 1rem;
+}
+
+.contactDetails{
+    display: flex;
+    gap: 1rem;
+}
+
+.address{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.billingAddress{
+    width: 40vw;
+    display: flex;
+    gap: 1rem;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.shippingAddress{
+    width: 40vw;
+    display: flex;
+    gap: 1rem;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.checkoutForm label{
+    width: 32vw;
+    font-size: 2rem;
+}
+
+input{
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid crimson;
+}
+
+.check input{
+    height: 1.5rem;
+    width: 1.5rem;
+}

@@ -23,7 +23,7 @@ export class UserService {
     this.http.post('http://localhost:3000/users',data).subscribe((result:any)=>{
       if(result){
         this.isUserSignUp.next(true);
-        this.route.navigate(['buyerHome']);
+        this.route.navigate(['']);
         localStorage.setItem('customer',JSON.stringify(result));
       }else{
        alert('user not signUp'); 
@@ -46,7 +46,7 @@ export class UserService {
           console.log(this.userData.firstName + this.userData.lastName);
           
           if(this.userData.role==='customer'){
-          this.route.navigate(['buyerHome']);
+          this.route.navigate(['']);
           localStorage.setItem('customer',JSON.stringify(result.body));
           }else{
             this.route.navigate(['admin/adminHome']);

@@ -71,7 +71,7 @@ export class SignInComponent {
         // })
       }else{
         this.signUpForm.markAllAsTouched();
-        console.log('form is not cubmitted');
+        console.log('form is not submitted');
       }
 
       console.log(data.role);

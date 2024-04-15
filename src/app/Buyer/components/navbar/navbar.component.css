@@ -1,8 +1,9 @@
-/* .fixNav{
-    position: sticky;
+.fixNav{
+    width: 100%;
+    position: fixed;
     top: 0;
     z-index: 3;
-} */
+}
 
 
 /* TOP NAVBAR WHICH CONTAINS CONTACT & CUSTOM INFORMATION */
@@ -226,6 +227,7 @@ select option {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    position: relative;
 }
 
 #cartText{
@@ -436,4 +438,25 @@ select option {
 
 .menuList{
     cursor: pointer;
+}
+
+
+.cartIcon{
+    position: absolute;
+    top: -1.2rem;
+    left: -0.5rem;
+}
+
+#cartCount{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: crimson;
+    text-align: center;
+    width: 1rem;
+    line-height: 1rem;
+    padding: 0.1rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

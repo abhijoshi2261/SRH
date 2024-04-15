@@ -1,3 +1,5 @@
+<div class="fixNav">
+
 <div class="buyerNavbar">
   <!-- /* TOP NAVBAR WHICH CONTAINS CONTACT & CUSTOM INFORMATION */ -->
   <div class="main">
@@ -34,7 +36,7 @@
     </div>
   </div>
 
-  <div class="fixNav">
+  
     <!-- /* Middle Navbar which contains Logo, SearchBar, Login/Account, Likes/Favourites, Cart, Etc. */ -->
 
     <div class="middle">
@@ -63,6 +65,9 @@
           <a href="#"><i class="ri-heart-line"></i></a>
         </div>
         <div class="cart">
+          <div class="cartIcon">
+            <p id="cartCount" *ngIf="showCount">{{cartCount}}</p>
+          </div>
           <a routerLink="cartListing"><i class="ri-shopping-cart-line"></i></a>
           <div class="cartDetails">
             <p id="cartText">cart</p>

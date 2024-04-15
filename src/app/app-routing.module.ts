@@ -18,7 +18,6 @@ const routes: Routes = [
   },
   {path:'',
   component:BuyerHomeComponent,
-  // canActivate:[AuthGuard]
   },
   {
     path:'cartListing',
@@ -37,7 +36,8 @@ const routes: Routes = [
   },
   {
     path:'checkout',
-    component:CheckoutComponent
+    component:CheckoutComponent,
+    // canActivate:[AuthGuard]
   }
 ];
 

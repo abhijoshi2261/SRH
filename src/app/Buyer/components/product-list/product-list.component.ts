@@ -19,9 +19,9 @@ export class ProductListComponent {
     this.favouriteItem=true;
   }
 
-  addCart(){
-    alert("product added to Cart");
-  }
+  addToCart(item:any){
+    this.product.addToCart(item);
+}
 
   favouriteItem:boolean=false;
 

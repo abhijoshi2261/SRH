@@ -1,13 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import {BehaviorSubject} from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductServiceService {
 
-  constructor(private http:HttpClient,private route:Router) {this.addProduct }
+
+  product:any="";
+  cartLength = new BehaviorSubject<number>(0);
+  cartLengthValue = this.cartLength.asObservable();
+
+
+  constructor(private http:HttpClient,private route:Router) {}
 
   getProducts(){
     return this.http.get('http://localhost:3000/products');
@@ -33,13 +41,21 @@ export class ProductServiceService {
     return this.http.get(`http://localhost:3000/cart`);
   }
 
-  product:any="";
+  getCartLength() {
+    this.getCartItems().subscribe((result: any) => {
+      if (result.length >= 0) {
+        this.cartLength.next(result.length);
+        console.log('CartLengthValue', this.cartLengthValue);
+      }
+    });
+  }
+
 
   addToCart(id:any){
-    console.log("Product index is ",id);
+    // console.log("Product index is ",id);
     
     this.http.get(`http://localhost:3000/products?id=${id}`,{observe:'response'}).subscribe((result:any)=>{
-      console.log("Selected Product",result.body[0]);
+      // console.log("Selected Product",result.body[0]);
       this.product = result.body[0];
       this.product.quantity=1;
       this.addProduct();
@@ -48,17 +64,22 @@ export class ProductServiceService {
   }
 
   addProduct(){
-    console.log("Product in Cart",this.product);
+    // console.log("Product in Cart",this.product);
     
     this.http.post('http://localhost:3000/cart',this.product).subscribe((result:any)=>{
       // this.product.quantity=1;
-      console.log("cartItems",result);
+      // console.log("cartItems",result);
+    this.getCartLength();
+
     })
   }
 
 
   removeProduct(id:any){
-   return this.http.delete(`http://localhost:3000/cart/${id}`);
+   return this.http.delete(`http://localhost:3000/cart/${id}`).subscribe((result:any)=>{
+      this.getCartLength();
+   })
+  //  this.getCartLength();
   }
 
 }

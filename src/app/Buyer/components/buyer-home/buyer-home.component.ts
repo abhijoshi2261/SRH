@@ -38,7 +38,7 @@ export class BuyerHomeComponent {
 
   prev() {
     this.currentIndex>0?this.currentIndex--:this.currentIndex=this.carouselArr.length-1;
-    console.log(this.currentIndex);
+    // console.log(this.currentIndex);
   }
     
 
@@ -57,14 +57,14 @@ export class BuyerHomeComponent {
 
     getTopTrending(){
       this.product.getTopTrending().subscribe((result)=>{
-        console.log("Top Trending Products",result);
+        // console.log("Top Trending Products",result);
         this.topTrending=result;
       })
     }
 
     getTopSelling(){
       this.product.getTopSelling().subscribe((result)=>{
-        console.log("Top Selling Products",result);
+        // console.log("Top Selling Products",result);
         this.topSelling=result;
       })
     }
@@ -78,12 +78,6 @@ export class BuyerHomeComponent {
 
   addToCart(item:any){
       this.product.addToCart(item);
-      // console.log("added to cart ",index);
-        // console.log("product ID",item);
-        
-      // .subscribe((res:any)=>{
-      //   console.log("added to cart ",res);
-      // })
   }
 
 

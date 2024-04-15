@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { cartItem, topSelling } from 'src/app/dataTypes';
 import { ProductServiceService } from 'src/app/services/product-service.service';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +13,11 @@ import { ProductServiceService } from 'src/app/services/product-service.service'
 export class CartComponent {
   [x: string]: any;
 
-  constructor(private route: Router, private product:ProductServiceService) {
+  cartItems:any=[];
+  subTotal: number = 0;
+
+
+  constructor(private route: Router, private product:ProductServiceService,private user:UserService) {
     
     this.total();
   }
@@ -21,7 +27,6 @@ export class CartComponent {
     this.getCartItems();
   }
 
-  subTotal: number = 0;
 
   add(index: number, val: number) {
     this.cartItems[index].quantity++;
@@ -43,13 +48,9 @@ export class CartComponent {
 
   deleteItems(id:any,index:any) {
     // alert('product deleted from Cart');
-    this.product.removeProduct(id).subscribe((result:any)=>{
-        console.log("after Delete", result);
+    this.product.removeProduct(id);
         this.cartItems.splice(index,1);
-    })
-
-    // this.cartItems.pop(id);
-    
+        this.total();
   }
 
   total() {
@@ -60,8 +61,6 @@ export class CartComponent {
       if (element.salePrice) { 
         let productTotal = element.quantity * element.salePrice;
         subTotal = subTotal + productTotal;
-        console.log('This is SubTotal', this.subTotal);
-        console.log('This is sellPrice', element.salePrice);
       } else {
         let productTotal = element.quantity * element.mrp;
         subTotal = subTotal + productTotal;
@@ -71,21 +70,42 @@ export class CartComponent {
     this.subTotal = subTotal;
   }
 
-  cartItems:any=[]
   getCartItems(){
     this.product.getCartItems().subscribe((result:any)=>{
-      console.log("Cart Items",result);
       result.quantity=1;
       this.cartItems=result;
-      console.log("Final Response",this.cartItems);
       this.total();
-      
     })
   }
 
 
   checkout(){
-    alert('Do you want to continue with Cart?');
-    this.route.navigate(['checkout']);
+
+        if(this.cartItems.length>0){
+          if(localStorage.getItem('customer')){
+            this.route.navigate(['checkout']);
+          }else{
+            alert('Please Login / Register before checkout');
+            this.route.navigate(['login']);
+          }
+        }else{
+          alert('You have to Add Atleast One Item in Cart');
+          this.route.navigate(['productList']);
+        }
+
+    // if (localStorage.getItem('customer')) {
+    //     console.log('Customer LoggedIN');
+    //     this.user.isUserLoggedIn.next(true);
+    //     this.route.navigate(['checkout']);
+    //   }else {
+    //     alert('Please Login / Register before checkout');
+    //     this.route.navigate(['login']); 
+    // }
   }
+
+
+  addProduct(){
+    this.route.navigate(['productList'])
+  }
+
 }

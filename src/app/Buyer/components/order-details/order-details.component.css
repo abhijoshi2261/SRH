@@ -1,0 +1,108 @@
+.orderDetails{
+    margin: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+.companyInfo{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+}
+
+h1{
+    text-align: center;
+}
+
+.companyDetails{
+    border: 1px solid black;
+}
+
+.customerDetails{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-collapse: collapse;
+    display: flex;
+}
+
+.billingAdd{
+    width: 50%;
+    height: auto;
+    border-right: 1px solid black;
+    padding: 1rem;
+}
+
+.shippingAdd{
+    width: 50%;
+    height: auto;
+    padding: 1rem;
+}
+
+.product{
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartPageItems table{
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+table{
+    text-align: center;
+    margin-top: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+th{
+    border-bottom: 0.2rem solid gray;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+}
+
+td{
+    line-height: 1.5rem;
+    margin: 0;
+    border: 0.2 rem solid lightgrey;
+}
+
+tr:nth-child(odd){
+    background-color: lightgrey;
+}
+
+#quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.terms{
+    border: 1px solid black;
+    font-size: 1.2rem;
+}
+
+.print{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    margin: 1.5rem auto;
+    width: 10%;
+    background-color: crimson;
+    color: white;
+    align-items: center;
+}

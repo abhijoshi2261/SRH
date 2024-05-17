@@ -1,6 +1,6 @@
 <div class="checkoutContainer" style="border: 1px solid black;">
     <div class="deliveryType">
-        <h2>Select Delivery Type:</h2>
+        <h2 class="mandatory">Select Delivery Type:</h2>
         <div class="inputs">
             <div class="store">
                 <div class="fields"> 
@@ -17,45 +17,103 @@
         </div>
     </div>
     <div class="additionalInfo">
-        <span *ngIf="!show">Please check Delivery Terms & Conditions</span>
-        <span *ngIf="show">Pickup within 48 Hrs.</span>
+        <p *ngIf="message == 'home'" class="info">Please check Delivery Terms & Conditions</p>
+        <p *ngIf="message == 'store'" class="info">Pickup within 48 Hrs.</p>
     </div>
 </div>
 
-<div class="checkoutForm" *ngIf="show">
-    <form [formGroup]="homeDelivery">
+<div class="checkoutForm" *ngIf="message == 'home'">
+    <form [formGroup]="homeDelivery" (ngSubmit)="getOrderedProduct(homeDelivery.value)" >
         <div class="userInfo">
             <div class="name">
-                <label for="name">Enter Customer Name:</label>
-                <input type="text" name="name" id="customerName" placeholder="Customer Name" formControlName="customerName">
-                <input type="text" id="customerLastName" placeholder="Customer Last Name" formControlName="customerName">
+                <label for="name" class="mandatory">Enter Customer Name:</label>
+                <div class="inputsValidation">
+                    <input type="text" name="name" id="firstName" placeholder="Customer First Name" formControlName="firstName">
+                    <span *ngIf="homeDeliveryControls['firstName'].invalid && homeDeliveryControls['firstName'].touched ||  (homeDeliveryControls['firstName'].invalid && homeDeliveryControls['firstName'].touched)" class="errorMessage">First Name is Required</span>
+                </div>
+                <div class="inputsValidation">
+                    <input type="text" id="customerLastName" placeholder="Customer Last Name" formControlName="lastName">
+                    <span *ngIf="homeDeliveryControls['lastName'].invalid && homeDeliveryControls['lastName'].touched ||  (homeDeliveryControls['lastName'].invalid && homeDeliveryControls['lastName'].touched)" class="errorMessage">Last Name is Required</span>
+                </div>
+
             </div>
             <div class="contactDetails">
-                <label for="contactDetails">Enter Your Contact Details:</label>
-                <input type="text" name="contactDetails" id="mobileNo" placeholder="Mobile No." formControlName="mobileNo">
-                <input type="text" name="contactDetails" id="email" placeholder="Email-Id" formControlName="email">
+                <label for="contactDetails" class="mandatory">Enter Your Contact Details:</label>
+                <div class="inputsValidation">
+                    <input type="text" name="contactDetails" id="mobileNo" placeholder="Mobile No." formControlName="mobileNo">
+                    <span *ngIf="homeDeliveryControls['mobileNo'].invalid && homeDeliveryControls['mobileNo'].touched ||  (homeDeliveryControls['mobileNo'].invalid && homeDeliveryControls['mobileNo'].touched)" class="errorMessage">Mobile No. is Required</span>
+                </div>
+                <div class="inputsValidation">
+                    <input type="text" name="contactDetails" id="email" placeholder="Email-Id" formControlName="email">
+                    <span *ngIf="homeDeliveryControls['email'].invalid && homeDeliveryControls['email'].touched ||  (homeDeliveryControls['email'].invalid && homeDeliveryControls['email'].touched)" class="errorMessage">Email is Required</span>
+                </div>
             </div>
         </div>
         <div class="address">
             <div class="billingAddress">
-                <label for="address">Enter Billing Address:</label>
+                <label for="address" class="mandatory">Enter Billing Address:</label>
                 <input type="text" name="address" id="billingAddressLine1" placeholder="House NO. / Plot No./Appartment Name" formControlName="billingAddressLine1">
+                <span *ngIf="homeDeliveryControls['billingAddressLine1'].invalid && homeDeliveryControls['billingAddressLine1'].touched ||  (homeDeliveryControls['billingAddressLine1'].invalid && homeDeliveryControls['billingAddressLine1'].touched)" class="errorMessage">Address Line is Required</span>
                 <input type="text" name="address" id="billingAddressLine2" placeholder="Street Name / Lane No." formControlName="billingAddressLine2">
+                <span *ngIf="homeDeliveryControls['billingAddressLine2'].invalid && homeDeliveryControls['billingAddressLine2'].touched ||  (homeDeliveryControls['billingAddressLine2'].invalid && homeDeliveryControls['billingAddressLine2'].touched)" class="errorMessage">Address Line is Required</span>
                 <input type="text" name="address" id="billingAddressLine3" placeholder=" Area Name / Area Address" formControlName="billingAddressLine3">
-                <input type="text" name="city" id="billingAddressCity" placeholder="City" formArrayName="billingAddressCity">
-                <input type="text" name="state" id="billingAddressState" placeholder="State" formArrayName="billingAddressState">
+                <span *ngIf="homeDeliveryControls['billingAddressLine3'].invalid && homeDeliveryControls['billingAddressLine3'].touched ||  (homeDeliveryControls['billingAddressLine3'].invalid && homeDeliveryControls['billingAddressLine3'].touched)" class="errorMessage">Address Line is Required</span>
+                <input type="text" name="city" id="billingAddressCity" placeholder="City" formControlName="billingAddressCity">
+                <span *ngIf="homeDeliveryControls['billingAddressCity'].invalid && homeDeliveryControls['billingAddressCity'].touched ||  (homeDeliveryControls['billingAddressCity'].invalid && homeDeliveryControls['billingAddressCity'].touched)" class="errorMessage">Address City is Required</span>
+                <input type="text" name="state" id="billingAddressState" placeholder="State" formControlName="billingAddressState">
+                <span *ngIf="homeDeliveryControls['billingAddressState'].invalid && homeDeliveryControls['billingAddressState'].touched ||  (homeDeliveryControls['billingAddressState'].invalid && homeDeliveryControls['billingAddressState'].touched)" class="errorMessage">Address State is Required</span>
             </div>
             <div class="shippingAddress" *ngIf="showShippingAddress">
-                <label for="address">Enter Shipping Address:</label>
+                <label for="address" class="mandatory">Enter Shipping Address:</label>
                 <input type="text" name="address" id="shippingAddressLine1" placeholder="House NO. / Plot No./Appartment Name" formControlName="shippingAddressLine1">
+                <span *ngIf="homeDeliveryControls['shippingAddressLine1'].invalid && homeDeliveryControls['shippingAddressLine1'].touched ||  (homeDeliveryControls['shippingAddressLine1'].invalid && homeDeliveryControls['shippingAddressLine1'].touched)" class="errorMessage">Address Line is Required</span>
                 <input type="text" name="address" id="shippingAddressLine2" placeholder="Street Name / Lane No." formControlName="shippingAddressLine2">
+                <span *ngIf="homeDeliveryControls['shippingAddressLine2'].invalid && homeDeliveryControls['shippingAddressLine2'].touched ||  (homeDeliveryControls['shippingAddressLine2'].invalid && homeDeliveryControls['shippingAddressLine2'].touched)" class="errorMessage">Address Line is Required</span>
                 <input type="text" name="address" id="shippingAddressLine3" placeholder=" Area Name / Area Address" formControlName="shippingAddressLine3">
-                <input type="text" name="city" id="shippingAddressCity" placeholder="City" formArrayName="shippingAddressCity">
-                <input type="text" name="state" id="shippingAddressState" placeholder="State" formArrayName="shippingAddressState">
+                <span *ngIf="homeDeliveryControls['shippingAddressLine3'].invalid && homeDeliveryControls['shippingAddressLine3'].touched ||  (homeDeliveryControls['shippingAddressLine3'].invalid && homeDeliveryControls['shippingAddressLine3'].touched)" class="errorMessage">Address Line is Required</span>
+                <input type="text" name="city" id="shippingAddressCity" placeholder="City" formControlName="shippingAddressCity">
+                <span *ngIf="homeDeliveryControls['shippingAddressCity'].invalid && homeDeliveryControls['shippingAddressCity'].touched ||  (homeDeliveryControls['shippingAddressCity'].invalid && homeDeliveryControls['shippingAddressCity'].touched)" class="errorMessage">Address City is Required</span>
+                <input type="text" name="state" id="shippingAddressState" placeholder="State" formControlName="shippingAddressState">
+                <span *ngIf="homeDeliveryControls['shippingAddressState'].invalid && homeDeliveryControls['shippingAddressState'].touched ||  (homeDeliveryControls['shippingAddressState'].invalid && homeDeliveryControls['shippingAddressState'].touched)" class="errorMessage">Address State is Required</span>
             </div>
         </div>
         <div class="check">
             <input type="checkbox" id="checker" formControlName="shippingCheck" [(ngModel)]="isChecked" (change)="addressShow()"> <label for="checker">Shipping Address is Different?</label>
         </div>
+
+        <button class="order">Place Order</button>
     </form>
 </div>
+
+<div class="checkoutForm" *ngIf="message =='store'">
+    <form [formGroup]="storePickup" (ngSubmit)="order(storePickup.value)">
+        <div class="userInfo">
+            <div class="name">
+                <label for="name" class="mandatory">Enter Customer Name:</label>
+                <div class="inputsValidation">
+                    <input type="text" name="name" id="firstName" placeholder="Customer First Name" formControlName="firstName">
+                    <span *ngIf="storePickupControls['firstName'].invalid && storePickupControls['firstName'].touched ||  (storePickupControls['firstName'].invalid && storePickupControls['firstName'].touched)" class="errorMessage">First Name is Required</span>
+                </div>
+                <div class="inputsValidation">
+                    <input type="text" id="customerLastName" placeholder="Customer Last Name" formControlName="lastName">
+                    <span *ngIf="storePickupControls['lastName'].invalid && storePickupControls['lastName'].touched ||  (storePickupControls['lastName'].invalid && storePickupControls['lastName'].touched)" class="errorMessage">Last Name is Required</span>
+                </div>
+            </div>
+            <div class="contactDetails">
+                <label for="contactDetails" class="mandatory">Enter Your Contact Details:</label>
+                <div class="inputsValidation">
+                    <input type="text" name="contactDetails" id="mobileNo" placeholder="Mobile No." formControlName="mobileNo">
+                    <span *ngIf="storePickupControls['mobileNo'].invalid && storePickupControls['mobileNo'].touched ||  (storePickupControls['mobileNo'].invalid && storePickupControls['mobileNo'].touched)" class="errorMessage">Mobile No. is Required</span>
+                </div>
+                <div class="inputsValidation">
+                    <input type="text" name="contactDetails" id="email" placeholder="Email-Id" formControlName="email">
+                    <span *ngIf="storePickupControls['email'].invalid && storePickupControls['email'].touched ||  (storePickupControls['email'].invalid && storePickupControls['email'].touched)" class="errorMessage">Email is Required</span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button class="order">Place Order</button>
+</div>
+
+
+

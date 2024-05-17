@@ -1,0 +1,9 @@
+.qrContainer{
+    border:1px solid red;
+    margin: 2rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

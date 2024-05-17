@@ -8,7 +8,7 @@
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    margin-top: 12rem;
+    /* margin-top: 12rem; */
 }
 
 .productListHeader{

@@ -84,6 +84,7 @@ export class CartComponent {
         if(this.cartItems.length>0){
           if(localStorage.getItem('customer')){
             this.route.navigate(['checkout']);
+            this.product.addProductInOrder(this.cartItems);
           }else{
             alert('Please Login / Register before checkout');
             this.route.navigate(['login']);
@@ -93,14 +94,7 @@ export class CartComponent {
           this.route.navigate(['productList']);
         }
 
-    // if (localStorage.getItem('customer')) {
-    //     console.log('Customer LoggedIN');
-    //     this.user.isUserLoggedIn.next(true);
-    //     this.route.navigate(['checkout']);
-    //   }else {
-    //     alert('Please Login / Register before checkout');
-    //     this.route.navigate(['login']); 
-    // }
+  
   }
 
 

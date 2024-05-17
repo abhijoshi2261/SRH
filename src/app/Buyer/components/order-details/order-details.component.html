@@ -1,0 +1,55 @@
+<div class="orderDetails">
+    <div class="companyDetails">
+        <h1>Sanjay Bhokare Group of Institutes, Miraj</h1>
+        <pre class="companyInfo">Shri Ambabai Talim Sanstha's Sanjay Bhokare Group Of Institutes Miraj Tilak Nagar, Miraj-Sangli Road, Post-Wanlesswadi, Miraj, Dist: Sangli - Pin-416414.</pre>
+        <pre class="companyInfo">Email -  director@sbgimiraj.org</pre>
+        <pre class="companyInfo">Mobile -  +91-9923259000</pre>
+    </div>
+    <div class="customerDetails">
+        <div class="billingAdd">
+            <h2>Billing Address</h2>
+        </div>
+        <div class="shippingAdd">
+            <h2>Shipping Address</h2>
+        </div>
+    </div>
+    <div class="product">
+        <table>
+            <tr>
+              <th>Sr.No</th>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Amount</th>
+             
+            </tr>
+            <tr *ngFor="let item of orderItems; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{ item.name }}</td>
+              <td id="quantity" *ngIf="item.salePrice">
+                
+                {{ item.quantity }}
+                
+              </td>
+              <td id="quantity" *ngIf="!item.salePrice">
+                
+                {{ item.quantity }}
+                
+              </td>
+              <td *ngIf="item.salePrice">{{ item.quantity * item.salePrice }}</td>
+              <td *ngIf="!item.salePrice">{{ item.quantity * item.mrp }}</td>
+            </tr>
+            <tr *ngFor="let item of orderItems"></tr>
+          </table>
+    </div>
+    <div class="terms">
+        <ol>
+            <li>Payment is due within 30 days from the date of invoice unless otherwise agreed in writing. Late payments may incur interest charges of 1.5% per month.</li>
+            <li>Any disputes regarding this invoice must be raised within 7 days of the invoice date. Failure to notify us of any disputes within this period will be considered acceptance of the invoiced amount.</li>
+            <li>The delivery of goods is subject to our standard shipping terms. We are not responsible for delays caused by external factors</li>
+        </ol>
+    </div>
+    
+    <div class="print">
+        <button (click)="print()">Print</button>
+    </div>
+</div>

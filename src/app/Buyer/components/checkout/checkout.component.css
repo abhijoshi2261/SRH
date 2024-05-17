@@ -12,7 +12,12 @@
     align-items: center;
     gap: 0 1.5rem;
     padding: 1rem;
-    padding-top: 15rem;
+    /* padding-top: 15rem; */
+}
+
+.info{
+    text-align: center;
+    color: red;
 }
 
 .additionalInfo{
@@ -44,6 +49,7 @@ input[type=radio] {
     height: auto;
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     padding: 1rem;
 }
@@ -113,3 +119,17 @@ input{
     height: 1.5rem;
     width: 1.5rem;
 }
+
+.order{
+    font-size: 2rem;
+    width: 100%;
+    background-color: crimson;
+    color: white;
+    margin: 2rem auto;
+}
+
+.inputsValidation{
+    display: flex;
+    flex-direction: column;
+}
+

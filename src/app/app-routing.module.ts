@@ -9,6 +9,8 @@ import {AdminModule} from './Admin/admin.module'
 import { FooterComponent } from './Buyer/components/footer/footer.component';
 import { CheckboxRequiredValidator } from '@angular/forms';
 import { CheckoutComponent } from './Buyer/components/checkout/checkout.component';
+import { PaymentComponent } from './Buyer/components/payment/payment.component';
+import { OrderDetailsComponent } from './Buyer/components/order-details/order-details.component';
 
 
 const routes: Routes = [
@@ -38,6 +40,14 @@ const routes: Routes = [
     path:'checkout',
     component:CheckoutComponent,
     // canActivate:[AuthGuard]
+  },
+  {
+    path:'payments',
+    component:PaymentComponent
+  },
+  {
+    path:'orderDetails',
+    component:OrderDetailsComponent
   }
 ];
 

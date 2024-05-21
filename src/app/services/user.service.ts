@@ -46,8 +46,10 @@ export class UserService {
           console.log(this.userData.firstName + this.userData.lastName);
           
           if(this.userData.role==='customer'){
+            console.log(typeof(result.body));
+            
           this.route.navigate(['cartListing']);
-          localStorage.setItem('customer',JSON.stringify(result.body));
+          localStorage.setItem('customer', JSON.stringify(this.userData));
           }else{
             this.route.navigate(['admin/adminHome']);
             localStorage.setItem('admin',JSON.stringify(result.body));

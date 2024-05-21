@@ -3,26 +3,6 @@
     <h1>SignUp Form</h1>
     <form [formGroup]="signUpForm" (ngSubmit)="userSignUp(signUpForm.value)">
 
-        <!-- <div class="role">
-          <div class="radioContent">
-            <div class="heading">
-              <p class="mandatory">You are : </p>
-            </div>
-            <div class="radioBtn">
-              <div class="customer">
-                <label for="customer">Customer </label>
-                <input type="radio" name="role" value="customer" id="customer" formControlName="role">
-              </div>
-    
-              <div class="admin">
-                <label for="admin">Admin</label>
-                <input type="radio" name="role" id="admin" value="admin" formControlName="role">
-              </div>
-            </div>
-          </div>
-          <span *ngIf="signUpControls['role'].invalid && signUpControls['role'].touched || (signUpControls['role'].invalid && signUpControls['role'].dirty)" class="errorMessage"> Please Select Your Designation</span>
-        </div> -->
-
       <div class="name">
         <label for="name" class="mandatory" style="width: fit-content;">Name:</label>
         <div class="inputfields">
@@ -148,7 +128,7 @@
           type="text"
           name="loginEmail"
           id="loginEmail"
-          placeholder="Enter Your Registered Email-ID"
+          placeholder="Enter Your Email-ID"
           formControlName="loginEmail"
         />
         <span *ngIf="loginControls['loginEmail'].invalid && loginControls['loginEmail'].touched ||  (loginControls['loginEmail'].invalid && loginControls['loginEmail'].touched)" class="errorMessage">New Password is Required</span>

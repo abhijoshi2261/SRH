@@ -86,7 +86,7 @@
 </div>
 
 <div class="checkoutForm" *ngIf="message =='store'">
-    <form [formGroup]="storePickup" (ngSubmit)="order(storePickup.value)">
+    <form [formGroup]="storePickup" (ngSubmit)="getOrderedProduct(storePickup.value)">
         <div class="userInfo">
             <div class="name">
                 <label for="name" class="mandatory">Enter Customer Name:</label>
@@ -111,8 +111,8 @@
                 </div>
             </div>
         </div>
+        <button class="order">Place Order</button>
     </form>
-    <button class="order">Place Order</button>
 </div>
 
 

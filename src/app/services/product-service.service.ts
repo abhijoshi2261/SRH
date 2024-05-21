@@ -82,4 +82,18 @@ export class ProductServiceService {
   //  this.getCartLength();
   }
 
+    orderedProducts:any;
+
+  addProductInOrder(data:any){
+    this.http.post('http://localhost:3000/order',data).subscribe((res:any)=>{
+      console.log("Ordered Products",res);
+      this.orderedProducts=res;
+    })
+  }
+
+  getOrderProducts(){
+    return this.http.get('http://localhost:3000/order');
+    // return this.orderedProducts;
+  }
+
 }

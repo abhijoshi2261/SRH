@@ -12,6 +12,8 @@ import { BuyerHomeComponent } from './Buyer/components/buyer-home/buyer-home.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './Buyer/components/checkout/checkout.component';
+import { PaymentComponent } from './Buyer/components/payment/payment.component';
+import { OrderDetailsComponent } from './Buyer/components/order-details/order-details.component';
 
 
 
@@ -26,7 +28,9 @@ import { CheckoutComponent } from './Buyer/components/checkout/checkout.componen
     ProductListComponent,
     SignInComponent,
     BuyerHomeComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    PaymentComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,

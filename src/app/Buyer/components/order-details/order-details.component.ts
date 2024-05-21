@@ -11,12 +11,21 @@ export class OrderDetailsComponent {
 
   constructor(private product:ProductServiceService){}
 
-  data=JSON.stringify(localStorage.getItem('customer'));
-  customerDetails=JSON.parse(this.data);
+  data: any=localStorage.getItem('customer');
+  customerDetails: any;
 
   ngOnInit() {
+    // console.log(typeof(this.customerDetails));
+    // this.getOrderItems();
+    console.log(typeof this.data);
+    console.log("Before parsing");
+    console.log(this.data);
+    this.customerDetails=JSON.parse(this.data);
+    console.log('After parsing.....')
+    console.log(typeof this.customerDetails)
     console.log(this.customerDetails);
-    this.getOrderItems();
+    
+    
   }
   orderItems:any;
 
@@ -26,11 +35,11 @@ export class OrderDetailsComponent {
   //   })
   // }
 
-  getOrderItems(){
-    this.product.getCartItems().subscribe((res:any)=>{
-      this.orderItems = res;
-    })
-  }
+  // getOrderItems(){
+  //   this.product.getCartItems().subscribe((res:any)=>{
+  //     this.orderItems = res;
+  //   })
+  // }
 
     print(){
       window.print();

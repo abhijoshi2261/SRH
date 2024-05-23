@@ -3,6 +3,7 @@ import {FormControl,FormGroup,Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { emailValidator } from 'src/app/services/email-regex';
 import { ProductServiceService } from 'src/app/services/product-service.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-checkout',
@@ -17,7 +18,7 @@ export class CheckoutComponent {
   isChecked:boolean=false;
   cartItems:any[]=[];
 
-  constructor(private product:ProductServiceService, private route:Router){}
+  constructor(private product:ProductServiceService, private route:Router, private user:UserService){}
 
   //  customerFirstName = document.getElementById('firstName');
 
@@ -100,14 +101,18 @@ order(data:any){
 
 orderedProducts:any;
 
+userDetails:any;
+
 getOrderedProduct(data:any){
   this.product.getOrderProducts().subscribe((result:any)=>{
     console.log("Checkout Products",result);
     this.orderedProducts=result;
     this.route.navigate(['payments']);
   })
-
-  console.log(data);
+  // this.route.navigate(['payments']);
+  this.userDetails=data;
+  console.log("formData",this.userDetails);
+  this.user.userDetails(this.userDetails);
   
 }
 

@@ -14,7 +14,8 @@ export class PaymentComponent {
 
   ngOnInit() {
     setTimeout(() => {
-      this.route.navigate(['orderDetails'])
+      this.route.navigate(['orderDetails']);
+      // window.open('http://localhost:4200/orderDetails','-blank');
     }, 5000);
   }
 

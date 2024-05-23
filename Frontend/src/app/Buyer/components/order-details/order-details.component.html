@@ -8,10 +8,22 @@
     <div class="customerDetails">
         <div class="billingAdd">
             <h2>Billing Address</h2>
-            <p>-{{customerDetails.firstName}}-</p>
+            <p id="customerName">{{userDetail.firstName}} {{userDetail.lastName}}</p>
+             <p>{{userDetail.billingAddressLine1}}</p> 
+             <p>{{userDetail.billingAddressLine2}}</p> 
+             <p>{{userDetail.billingAddressLine3}}</p> 
+             <p>{{userDetail.billingAddressCity}}</p> 
+             <p>{{userDetail.billingAddressState}}</p> 
+              <p>{{userDetail.mobileNo}}</p>
+              <p>{{userDetail.email}}</p>
         </div>
-        <div class="shippingAdd">
+        <div class="shippingAdd" >
             <h2>Shipping Address</h2>
+            <p>{{userDetail.shippingAddressLine1}}</p> 
+             <p>{{userDetail.shippingAddressLine2}}</p> 
+             <p>{{userDetail.shippingAddressLine3}}</p> 
+             <p>{{userDetail.shippingAddressCity}}</p> 
+             <p>{{userDetail.shippingAddressState}}</p> 
         </div>
     </div>
     <div class="product">

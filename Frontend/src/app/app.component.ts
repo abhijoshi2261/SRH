@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,34 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SRH';
-}
+
+  constructor(private Aroute:ActivatedRoute,private router:Router){
+    // console.log(this.route.pathFromRoot[1].snapshot.url[0].path);
+    
+  }
+
+  active:any;
+
+  ngOnInit() {
+    this.router.events.subscribe((routerEvent) => {
+        if(routerEvent instanceof NavigationEnd) {
+            // Get your url
+            console.log(routerEvent.url);
+
+            if(routerEvent.url == '/orderDetails'){
+              console.log('Data is True');
+              this.active = true;
+            }else{
+              console.log('Data is False');
+              
+            }
+
+            // this.active=routerEvent.url;
+
+            console.log("Assigned Values",this.active);
+            
+        }
+    });
+}}
+
+

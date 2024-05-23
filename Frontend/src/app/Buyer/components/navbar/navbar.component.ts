@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { BuyerHomeComponent } from '../buyer-home/buyer-home.component';
 import { FooterComponent } from '../footer/footer.component';
 import { ProductServiceService } from 'src/app/services/product-service.service';
+import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -20,14 +21,17 @@ export class NavbarComponent {
   phoneNumber = '+222-1800-2628';
   // email = 'ketan.sutar@amelioratesolutions.com';
   email = this.user.email;
-  showCount:boolean=false;
+  showCount:boolean=false;  
   cartCount: number = 0;
+
 
   constructor(
     private user: UserService,
     private route: Router,
-    private product: ProductServiceService
+    private product: ProductServiceService,
+    private activeRoute : ActivatedRoute
   ) {}
+  
 
   ngOnInit(): void {
     this.product.cartLengthValue.subscribe((result: number) => {
@@ -37,7 +41,7 @@ export class NavbarComponent {
       }else{
         this.showCount=false;
       }
-    });
+    });    
 
   }
 
@@ -56,4 +60,10 @@ export class NavbarComponent {
     window.scrollTo(0, 10000);
     // alert('scroll to called');
   }
+
+  getRoute(data:any){
+    console.log(data);
+    
+  }
+
 }

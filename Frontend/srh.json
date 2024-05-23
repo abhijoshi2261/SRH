@@ -218,136 +218,6 @@
         "discount": 0,
         "quantity": 1
       },
-      "id": "6e4b"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 5
-      },
-      "id": "688a"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 10
-      },
-      "id": "e50d"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 15
-      },
-      "id": "fd7e"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "da4b"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "a73f"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "db02"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "0b27"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "8cfd"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "4e79"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
       "1": {
         "id": "4",
         "image": "./assets/men shoes.jpg",
@@ -358,7 +228,17 @@
         "discount": 0,
         "quantity": 1
       },
-      "id": "da0b"
+      "2": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "id": "b668"
     },
     {
       "0": {
@@ -389,9 +269,268 @@
         "salePrice": 1000,
         "mrp": 1500,
         "discount": 0,
-        "quantity": 5
+        "quantity": 1
       },
-      "id": "9ce3"
+      "id": "946c"
+    },
+    {
+      "0": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "1": {
+        "id": "4",
+        "image": "./assets/men shoes.jpg",
+        "name": "Comfortable Office Shoes with brown",
+        "brand": "XYZ BRAND",
+        "salePrice": 1200,
+        "mrp": 1800,
+        "discount": 0,
+        "quantity": 1
+      },
+      "2": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "id": "6f93"
+    },
+    {
+      "0": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "1": {
+        "id": "4",
+        "image": "./assets/men shoes.jpg",
+        "name": "Comfortable Office Shoes with brown",
+        "brand": "XYZ BRAND",
+        "salePrice": 1200,
+        "mrp": 1800,
+        "discount": 0,
+        "quantity": 1
+      },
+      "2": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "id": "a454"
+    },
+    {
+      "0": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "1": {
+        "id": "4",
+        "image": "./assets/men shoes.jpg",
+        "name": "Comfortable Office Shoes with brown",
+        "brand": "XYZ BRAND",
+        "salePrice": 1200,
+        "mrp": 1800,
+        "discount": 0,
+        "quantity": 1
+      },
+      "2": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "id": "9c8a"
+    },
+    {
+      "id": "5e43",
+      "firstName": "Abhishek",
+      "lastName": "Joshi",
+      "email": "abhishek@joshi.com",
+      "mobileNo": "8149916360",
+      "date": ""
+    },
+    {
+      "0": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "1": {
+        "id": "4",
+        "image": "./assets/men shoes.jpg",
+        "name": "Comfortable Office Shoes with brown",
+        "brand": "XYZ BRAND",
+        "salePrice": 1200,
+        "mrp": 1800,
+        "discount": 0,
+        "quantity": 1
+      },
+      "2": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "id": "1f15"
+    },
+    {
+      "0": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "1": {
+        "id": "4",
+        "image": "./assets/men shoes.jpg",
+        "name": "Comfortable Office Shoes with brown",
+        "brand": "XYZ BRAND",
+        "salePrice": 1200,
+        "mrp": 1800,
+        "discount": 0,
+        "quantity": 1
+      },
+      "2": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "id": "b1ad"
+    },
+    {
+      "0": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "1": {
+        "id": "4",
+        "image": "./assets/men shoes.jpg",
+        "name": "Comfortable Office Shoes with brown",
+        "brand": "XYZ BRAND",
+        "salePrice": 1200,
+        "mrp": 1800,
+        "discount": 0,
+        "quantity": 1
+      },
+      "2": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "id": "e91e"
+    },
+    {
+      "0": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "1": {
+        "id": "4",
+        "image": "./assets/men shoes.jpg",
+        "name": "Comfortable Office Shoes with brown",
+        "brand": "XYZ BRAND",
+        "salePrice": 1200,
+        "mrp": 1800,
+        "discount": 0,
+        "quantity": 1
+      },
+      "2": {
+        "id": "3",
+        "image": "./assets/nivea combo.jpg",
+        "name": "nivea body care combo",
+        "brand": "XYZ BRAN",
+        "salePrice": 1000,
+        "mrp": 1500,
+        "discount": 0,
+        "quantity": 1
+      },
+      "id": "7fe0"
+    }
+  ],
+  "custDetails": [
+    {
+      "id": "e3d5",
+      "firstName": "Abhishek",
+      "lastName": "Joshi",
+      "email": "abhishek@joshi.com",
+      "mobileNo": "8149916360",
+      "billingAddressLine1": "20/536,",
+      "billingAddressLine2": "Near Hotel Upvan",
+      "billingAddressLine3": "Kolhapur Road,",
+      "billingAddressCity": "Ichalkaranji",
+      "billingAddressState": "Maharashtra",
+      "shippingAddressLine1": "19/137",
+      "shippingAddressLine2": "Pareek Colony",
+      "shippingAddressLine3": "Kolhapur Road,",
+      "shippingAddressCity": "Ichalkaranji",
+      "shippingAddressState": "Maharashtra",
+      "shippingCheck": true
     }
   ]
 }

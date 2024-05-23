@@ -69,4 +69,45 @@ export class UserService {
   }
 
 
-}
+  userDetails(data:any){
+    this.http.get('http://localhost:3000/custDetails',{observe:'response'}).subscribe((res:any)=>{
+      console.log('user Details',res.body);
+      if(res.body.length<=0){
+        console.log('absent');
+        this.http.post('http://localhost:3000/custDetails',data).subscribe((user:any)=>{
+          console.log(user);
+          
+        })
+      }else{
+        console.log('present');
+        this.http.get('http://localhost:3000/custDetails',{observe:'response'}).subscribe((res:any)=>{
+          console.log('Id of User',res.body[0].id);
+          this.http.delete(`http://localhost:3000/custDetails/${res.body[0].id}`).subscribe((out:any)=>{
+            console.log('User Deleted');
+            
+          })
+          this.http.post('http://localhost:3000/custDetails',data).subscribe((user:any)=>{
+          console.log('new User',user);
+        })
+        })
+        
+      }
+      
+    })
+
+    }
+
+    getUserDetails(){
+      return this.http.get('http://localhost:3000/custDetails');
+    }
+
+
+
+
+
+
+
+  }
+
+
+

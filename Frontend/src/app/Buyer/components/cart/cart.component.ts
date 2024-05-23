@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { cartItem, topSelling } from 'src/app/dataTypes';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 import { UserService } from 'src/app/services/user.service';
+import {order} from 'src/app/dataTypes'
 
 
 @Component({
@@ -78,13 +79,23 @@ export class CartComponent {
     })
   }
 
+  orderDetail!:any;
 
   checkout(){
-
+          console.log('type of order',typeof(this.orderDetail));
+          
         if(this.cartItems.length>0){
           if(localStorage.getItem('customer')){
             this.route.navigate(['checkout']);
-            this.product.addProductInOrder(this.cartItems);
+            this.orderDetail=this.cartItems;
+            this.orderDetail.finalTotal=this.subTotal;
+            this.product.addProductInOrder(this.orderDetail);
+            console.log("cart items are", this.cartItems);
+            console.log(this.subTotal);
+            console.log("Data to be send",this.orderDetail);
+            
+            
+            
           }else{
             alert('Please Login / Register before checkout');
             this.route.navigate(['login']);

@@ -4,72 +4,41 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Cart {
 
     @Id
 
     @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @NotBlank(message = "Please Add Cart Name")
+    @Length(max = 5, min = 1)
+    @Size(max = 10, min = 0)
+    @Email
+    @Positive
+    @PositiveOrZero
+    @Negative
+    @NegativeOrZero
+    @Future
+    @FutureOrPresent
+    @Past
+    @PastOrPresent
     private Long Cart_id;
     private String User_id;
-
-    public String getQuantity() {
-        return Quantity;
-    }
-
-    public void setQuantity(String quantity) {
-        Quantity = quantity;
-    }
-
-    public String getProduct_id() {
-        return Product_id;
-    }
-
-    public void setProduct_id(String product_id) {
-        Product_id = product_id;
-    }
-
-    public String getUser_id() {
-        return User_id;
-    }
-
-    public void setUser_id(String user_id) {
-        User_id = user_id;
-    }
-
-    public Long getCart_id() {
-        return Cart_id;
-    }
-
-    public void setCart_id(Long cart_id) {
-        Cart_id = cart_id;
-    }
-
     private String Product_id;
     private String Quantity;
 
-    public Cart(Long cart_id, String user_id, String product_id, String quantity) {
-        Cart_id = cart_id;
-        User_id = user_id;
-        Product_id = product_id;
-        Quantity = quantity;
-    }
-
-    public Cart() {
-
-
-    }
-
-    @Override
-    public String toString() {
-        return "Cart{" +
-                "Cart_id=" + Cart_id +
-                ", User_id=" + User_id +
-                ", Product_id=" + Product_id +
-                ", Quantity=" + Quantity +
-                '}';
-    }
 
 
 }

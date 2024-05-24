@@ -2,6 +2,7 @@ package com.Ecommerce.Ecommerce.web.application.controller;
 
 import com.Ecommerce.Ecommerce.web.application.entity.Cart;
 import com.Ecommerce.Ecommerce.web.application.service.CartService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,7 @@ public class CartController {
     private CartService cartService;
 
     @PostMapping("/cart")
-    public Cart saveCart(@RequestBody Cart cart){
+    public Cart saveCart(@Valid @RequestBody Cart cart){
         return cartService.saveCart(cart);
     }
 

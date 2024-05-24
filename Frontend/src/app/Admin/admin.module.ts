@@ -5,17 +5,23 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { SellerComponent } from './Components/seller/seller.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { AdminNavbarComponent } from './Components/admin-navbar/admin-navbar.component';
+import { SellersListComponent } from './Components/sellers-list/sellers-list.component';
+import { CategoryFormComponent } from './Components/category-form/category-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     SellerComponent,
     AdminComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    SellersListComponent,
+    CategoryFormComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

@@ -204,6 +204,16 @@
       "mrp": 1500,
       "discount": 0,
       "quantity": 1
+    },
+    {
+      "id": "5",
+      "image": "./assets/iphone.jpg",
+      "name": "IPhone 14 pro max red",
+      "brand": "XYZ BRAND",
+      "salePrice": 105000,
+      "mrp": 135000,
+      "discount": 0,
+      "quantity": 1
     }
   ],
   "order": [
@@ -238,7 +248,17 @@
         "discount": 0,
         "quantity": 1
       },
-      "id": "b668"
+      "3": {
+        "id": "5",
+        "image": "./assets/iphone.jpg",
+        "name": "IPhone 14 pro max red",
+        "brand": "XYZ BRAND",
+        "salePrice": 105000,
+        "mrp": 135000,
+        "discount": 0,
+        "quantity": 1
+      },
+      "id": "443d"
     },
     {
       "0": {
@@ -271,266 +291,63 @@
         "discount": 0,
         "quantity": 1
       },
-      "id": "946c"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "1": {
-        "id": "4",
-        "image": "./assets/men shoes.jpg",
-        "name": "Comfortable Office Shoes with brown",
+      "3": {
+        "id": "5",
+        "image": "./assets/iphone.jpg",
+        "name": "IPhone 14 pro max red",
         "brand": "XYZ BRAND",
-        "salePrice": 1200,
-        "mrp": 1800,
+        "salePrice": 105000,
+        "mrp": 135000,
         "discount": 0,
         "quantity": 1
       },
-      "2": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "6f93"
-    },
+      "id": "0ee7"
+    }
+  ],
+  "custDetails": [
     {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "1": {
-        "id": "4",
-        "image": "./assets/men shoes.jpg",
-        "name": "Comfortable Office Shoes with brown",
-        "brand": "XYZ BRAND",
-        "salePrice": 1200,
-        "mrp": 1800,
-        "discount": 0,
-        "quantity": 1
-      },
-      "2": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "a454"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "1": {
-        "id": "4",
-        "image": "./assets/men shoes.jpg",
-        "name": "Comfortable Office Shoes with brown",
-        "brand": "XYZ BRAND",
-        "salePrice": 1200,
-        "mrp": 1800,
-        "discount": 0,
-        "quantity": 1
-      },
-      "2": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "9c8a"
-    },
-    {
-      "id": "5e43",
+      "id": "616a",
       "firstName": "Abhishek",
       "lastName": "Joshi",
       "email": "abhishek@joshi.com",
       "mobileNo": "8149916360",
       "date": ""
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "1": {
-        "id": "4",
-        "image": "./assets/men shoes.jpg",
-        "name": "Comfortable Office Shoes with brown",
-        "brand": "XYZ BRAND",
-        "salePrice": 1200,
-        "mrp": 1800,
-        "discount": 0,
-        "quantity": 1
-      },
-      "2": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "1f15"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "1": {
-        "id": "4",
-        "image": "./assets/men shoes.jpg",
-        "name": "Comfortable Office Shoes with brown",
-        "brand": "XYZ BRAND",
-        "salePrice": 1200,
-        "mrp": 1800,
-        "discount": 0,
-        "quantity": 1
-      },
-      "2": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "b1ad"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "1": {
-        "id": "4",
-        "image": "./assets/men shoes.jpg",
-        "name": "Comfortable Office Shoes with brown",
-        "brand": "XYZ BRAND",
-        "salePrice": 1200,
-        "mrp": 1800,
-        "discount": 0,
-        "quantity": 1
-      },
-      "2": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "e91e"
-    },
-    {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "1": {
-        "id": "4",
-        "image": "./assets/men shoes.jpg",
-        "name": "Comfortable Office Shoes with brown",
-        "brand": "XYZ BRAND",
-        "salePrice": 1200,
-        "mrp": 1800,
-        "discount": 0,
-        "quantity": 1
-      },
-      "2": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "7fe0"
     }
   ],
-  "custDetails": [
+  "sellers": [
     {
-      "id": "e3d5",
-      "firstName": "Abhishek",
-      "lastName": "Joshi",
-      "email": "abhishek@joshi.com",
-      "mobileNo": "8149916360",
-      "billingAddressLine1": "20/536,",
-      "billingAddressLine2": "Near Hotel Upvan",
-      "billingAddressLine3": "Kolhapur Road,",
-      "billingAddressCity": "Ichalkaranji",
-      "billingAddressState": "Maharashtra",
-      "shippingAddressLine1": "19/137",
-      "shippingAddressLine2": "Pareek Colony",
-      "shippingAddressLine3": "Kolhapur Road,",
-      "shippingAddressCity": "Ichalkaranji",
-      "shippingAddressState": "Maharashtra",
-      "shippingCheck": true
+      "id": "4bcf",
+      "businessName": "Shri Tirupati Agencies",
+      "ownerFirstName": "Abhishek",
+      "ownerLastName": "Joshi",
+      "businessMobile": "8149916360",
+      "businessEmail": "abhishekseller@joshi.com",
+      "businessAdd1": "20/536,",
+      "businessAdd2": "Near Hotel Upvan,",
+      "businessAdd3": "Kolhapur Road,",
+      "businessAddCity": "Ichalkaranji",
+      "businessAddPincode": "416115",
+      "newPassword": "123",
+      "confirmPassword": "123",
+      "role": "seller",
+      "status": "Active"
+    },
+    {
+      "id": "ff0f",
+      "businessName": "Krishna Agencies",
+      "ownerFirstName": "Rushi",
+      "ownerLastName": "Joshi",
+      "businessMobile": "7709465232",
+      "businessEmail": "rushi@joshi.com",
+      "businessAdd1": "Shahapur",
+      "businessAdd2": "Shahpur",
+      "businessAdd3": "Shahpur",
+      "businessAddCity": "Ichalkaranji",
+      "businessAddPincode": "416115",
+      "newPassword": "123456",
+      "confirmPassword": "123456",
+      "role": "seller",
+      "status": "Inactive"
     }
   ]
 }

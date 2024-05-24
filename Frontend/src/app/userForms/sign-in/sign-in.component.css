@@ -140,8 +140,9 @@
     font-weight: 600;
 }
 
-form a{
+a{
     padding: 0;
+    margin: 1rem;
 }
 
 
@@ -243,4 +244,86 @@ label{
 .loginContainer h1{
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+/* Seller Form Styling */
+
+.sellerContainer{
+    /* border: 1px solid black; */
+    margin: auto;
+    height: 40rem;
+    width: 40rem;
+}
+
+h1{
+    text-align: center;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    width: 100%;
+    margin: auto;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid crimson;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    /* text-align: center; */
+}
+
+.businessName,.ownerFirstName,.ownerLastName,.mobile,
+.email,.add1,.add2,.add3,.cityName,.pincode{
+    display: flex;
+    flex-direction: column;
+}
+
+.businessName{
+    /* width: 100%; */
+    margin: auto;
+}
+
+.ownerName{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactInfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.address{
+    display: flex;
+    flex-direction: column;
+}
+
+.city{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+.errorMessage{
+    font-size: 1.25rem;
+}
+
+.businessPassword{
+    display: flex;
+    justify-content: space-between;
+}
+
+label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
 }

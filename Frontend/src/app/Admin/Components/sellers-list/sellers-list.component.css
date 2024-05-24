@@ -1,0 +1,21 @@
+.sellerListContainer{
+    margin: 2rem;
+    border: 1px solid grey;
+}
+
+.heading{
+    text-align: center;
+}
+
+table{
+    margin: auto;
+    border: 1px solid lightgray;
+    font-size: 1.5rem;
+    border-collapse: collapse;
+}
+
+th,td{
+    border: 1px solid black;
+    padding: 0.75rem;
+    text-align: center;
+}

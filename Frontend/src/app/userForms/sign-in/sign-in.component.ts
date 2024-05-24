@@ -32,10 +32,16 @@ export class SignInComponent {
       this.LoginPssword = !this.LoginPssword
     }
 
-    login:boolean=false;
+    login:boolean=true;
 
     formChange(){
       this.login = !this.login;
+    }
+
+    seller:boolean=false;
+
+    sellerForm(){
+      this.seller = !this.seller;
     }
 
     signUpForm = new FormGroup({
@@ -53,12 +59,33 @@ export class SignInComponent {
       loginPassword : new FormControl('',[Validators.required]),
     })
 
+    sellerRegistrationForm = new FormGroup({
+      businessName : new FormControl('',[Validators.required]),
+      ownerFirstName :new FormControl('',[Validators.required]),
+      ownerLastName : new FormControl('',[Validators.required]),
+      businessMobile : new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
+      businessEmail : new FormControl('',Validators.compose([emailValidator,Validators.required])),
+      businessAdd1 : new FormControl('',[Validators.required]),
+      businessAdd2 : new FormControl('',[Validators.required]),
+      businessAdd3 : new FormControl('',[Validators.required]),
+      businessAddCity : new FormControl('',[Validators.required]),
+      businessAddPincode : new FormControl('',[Validators.required,Validators.maxLength(6),Validators.minLength(6)]),
+      newPassword : new FormControl('',[Validators.required]),
+      confirmPassword : new FormControl('',[Validators.required]),
+      role: new FormControl(''),
+      status :new FormControl('')
+    })
+
     get signUpControls(){
       return this.signUpForm.controls;
     }
 
     get loginControls(){
       return this.loginForm.controls;
+    }
+
+    get SellerControls(){
+      return this.sellerRegistrationForm.controls;
     }
 
     
@@ -79,11 +106,45 @@ export class SignInComponent {
       
     }
 
+    register(data:any){
+
+      data.role='seller';
+      data.status='Active';
+      if(this.sellerRegistrationForm.valid){
+        this.user.addSellers(data);
+        // .subscribe((result)=>{
+        //   console.log(result);
+        // })
+      }else{
+        this.sellerRegistrationForm.markAllAsTouched();
+        console.log('form is not submitted');
+      }
+
+      console.log(data.role);
+
+    }
+
     credentialsError='';
     userLogin(data:any){
       if(this.loginForm.valid){
         console.log(data);
         this.user.userLogin(data)
+       this.user.isUserLoggedIn.subscribe((isError)=>{
+        if(isError){
+          this.credentialsError='Please Enter Valid Credentials';
+        }
+        });
+      }
+      else{
+        this.loginForm.markAllAsTouched();
+      }
+  }
+
+  
+    sellerLogin(data:any){
+      if(this.loginForm.valid){
+        console.log('Seller',data);
+        this.user.sellersLogin(data)
        this.user.isUserLoggedIn.subscribe((isError)=>{
         if(isError){
           this.credentialsError='Please Enter Valid Credentials';

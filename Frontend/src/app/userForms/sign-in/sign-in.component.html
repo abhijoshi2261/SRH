@@ -1,5 +1,5 @@
 <div class="userForms">
-  <div class="signUpContainer" *ngIf="login">
+  <div class="signUpContainer" *ngIf="login && !seller">
     <h1>SignUp Form</h1>
     <form [formGroup]="signUpForm" (ngSubmit)="userSignUp(signUpForm.value)">
 
@@ -113,12 +113,13 @@
 
       <button>Sign Up</button>
     </form>
-    <a (click)="formChange()">Already Have an Account? Click here</a>
+    <a (click)="formChange()">Already Have an Account? Click Here</a>
+    <a (click)="sellerForm()">If You're Seller! Click Here</a>
 
   </div>
 
   <!-- Login Form -->
-  <div class="loginContainer" *ngIf="!login">
+  <div class="loginContainer" *ngIf="!login && !seller">
     <h1>Login Form</h1>
     <form [formGroup]="loginForm" (ngSubmit)="userLogin(loginForm.value)">
         <p class="errorMessage">{{credentialsError}}</p>
@@ -166,6 +167,183 @@
       <button>Login</button>
 
       <a (click)="formChange()">Don't Have an Account? Click here</a>
+      <a (click)="sellerForm()">Are You Seller? Click Here</a>
     </form>
+  </div>
+
+  <!-- Seller Login -->
+
+  <div class="loginContainer" *ngIf="!login && seller">
+    <h1> Seller Login Form</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="sellerLogin(loginForm.value)">
+        <p class="errorMessage">{{credentialsError}}</p>
+      <div class="loginEmail">
+        <label for="email" class="mandatory" style="width: fit-content;">Email-ID:</label>
+        <input
+          type="text"
+          name="loginEmail"
+          id="loginEmail"
+          placeholder="Enter Your Email-ID"
+          formControlName="loginEmail"
+        />
+        <span *ngIf="loginControls['loginEmail'].invalid && loginControls['loginEmail'].touched ||  (loginControls['loginEmail'].invalid && loginControls['loginEmail'].touched)" class="errorMessage">New Password is Required</span>
+      </div>
+
+      <div class="loginPassword">
+        <label for="loginPassword" class="mandatory" style="width: fit-content;">Password:</label>
+
+        <div class="loginInputs">
+          <input
+            type="password"
+            name="loginPassword"
+            id="loginPassword"
+            placeholder="Enter Password"
+            formControlName="loginPassword"
+            *ngIf="!LoginPssword"
+            
+          />
+
+          <input
+            type="text"
+            name="loginPassword"
+            id="loginPassword"
+            placeholder="Enter Password"
+            formControlName="loginPassword"
+            *ngIf="LoginPssword"
+          />
+
+          <i class="fa-regular fa-eye" *ngIf="LoginPssword" (click)="showLoginPassword()"></i>
+          <i class="fa-regular fa-eye-slash" *ngIf="!LoginPssword" (click)="showLoginPassword()"></i>
+        </div>
+        <span *ngIf="loginControls['loginPassword'].invalid && loginControls['loginPassword'].touched ||  (loginControls['loginPassword'].invalid && loginControls['loginPassword'].touched)" class="errorMessage">New Password is Required</span>
+      </div>
+
+      <button>Login</button>
+
+      <a (click)="formChange()">Don't Have an Account? Click here</a>
+    </form>
+  </div>
+
+
+  <!-- Seller Registrations -->
+  <div class="sellerContainer" *ngIf="login && seller">
+
+    <h1>Seller Registration Form</h1>
+      <div class="formContainer">
+        <form [formGroup]="sellerRegistrationForm" (ngSubmit)="register(sellerRegistrationForm.value)" >
+          <div class="businessName">
+            <label for="businessName" class="mandatory" style="width: fit-content;">Business Name:</label>
+            <input type="text" placeholder="Enter Your Shop Name" id="businessName" formControlName="businessName">
+            <span *ngIf="SellerControls['businessName'].invalid && SellerControls['businessName'].touched ||  (SellerControls['businessName'].invalid && SellerControls['businessName'].touched)" class="errorMessage">Business Name is Required</span>
+          </div>
+          <div class="ownerName">
+
+            <div class="ownerFirstName">
+            <label for="ownerName" class="mandatory" style="width: fit-content;">Owner First Name:</label>
+              
+              <input type="text" placeholder="Enter owner's First Name" id="ownerFirstName" formControlName="ownerFirstName">
+              <span *ngIf="SellerControls['ownerFirstName'].invalid && SellerControls['ownerFirstName'].touched ||  (SellerControls['ownerFirstName'].invalid && SellerControls['ownerFirstName'].touched)" class="errorMessage">Owner Name is Required</span>
+            </div>
+            <div class="ownerLastName">
+            <label for="ownerName" class="mandatory" style="width: fit-content;">Owner Last Name:</label>
+
+              <input type="text" placeholder="Enter owner's Last Name" id="ownerLastName" formControlName="ownerLastName">
+              <span *ngIf="SellerControls['ownerLastName'].invalid && SellerControls['ownerLastName'].touched ||  (SellerControls['ownerLastName'].invalid && SellerControls['ownerLastName'].touched)" class="errorMessage">Owner Name is Required</span>
+            </div>
+          </div>
+          <div class="contactInfo">
+            
+            <div class="mobile">
+            <label for="businessMobile" class="mandatory" style="width: fit-content;">Business Mobile:</label>
+
+              <input type="text" placeholder="Enter Mobile No." id="businessMobile" formControlName="businessMobile">
+              <span *ngIf="SellerControls['businessMobile'].invalid && SellerControls['businessMobile'].touched ||  (SellerControls['businessMobile'].invalid && SellerControls['businessMobile'].touched)" class="errorMessage">Mobile No. is Required</span>
+            </div>
+            <div class="email">
+            <label for="businessEmail" class="mandatory" style="width: fit-content;">Business Email:</label>
+
+              <input type="text" placeholder="Enter Email-ID" id="businessEmail" formControlName="businessEmail">
+              <span *ngIf="SellerControls['businessEmail'].invalid && SellerControls['businessEmail'].touched ||  (SellerControls['businessEmail'].invalid && SellerControls['businessEmail'].touched)" class="errorMessage">Email-ID is Required</span>
+            </div>
+          </div>
+          <div class="address"> 
+            <label for="businessAddress" class="mandatory" style="width: fit-content;">Business Address:</label>
+
+            <div class="add1">
+              <input type="text" placeholder="House No./ Building No." id="businessAdd1" formControlName="businessAdd1">
+              <span *ngIf="SellerControls['businessAdd1'].invalid && SellerControls['businessAdd1'].touched ||  (SellerControls['businessAdd1'].invalid && SellerControls['businessAdd1'].touched)" class="errorMessage">Addresss Line-1 is Required</span>
+            </div>
+            <div class="add2">
+              <input type="text" placeholder="Street Name/ Colony Name" id="businessAdd2" formControlName="businessAdd2">
+              <span *ngIf="SellerControls['businessAdd2'].invalid && SellerControls['businessAdd2'].touched ||  (SellerControls['businessAdd2'].invalid && SellerControls['businessAdd2'].touched)" class="errorMessage">Addresss Line-2 is Required</span>
+            </div>
+            <div class="add3">
+              <input type="text" placeholder="Landmark/ Area" id="businessAdd3" formControlName="businessAdd3">
+              <span *ngIf="SellerControls['businessAdd3'].invalid && SellerControls['businessAdd3'].touched ||  (SellerControls['businessAdd3'].invalid && SellerControls['businessAdd3'].touched)" class="errorMessage">Addresss Line-3 is Required</span>
+            </div>
+            <div class="city">
+                <div class="cityName">
+                  <input type="text" placeholder="City" id="businessAddCity" formControlName="businessAddCity">
+                  <span *ngIf="SellerControls['businessAddCity'].invalid && SellerControls['businessAddCity'].touched ||  (SellerControls['businessAddCity'].invalid && SellerControls['businessAddCity'].touched)" class="errorMessage">City is Required</span>
+                </div>
+                <div class="pincode">
+                  <input type="text" placeholder="Enter Pincode" id="businessAddPincode" formControlName="businessAddPincode">
+                  <span *ngIf="SellerControls['businessAddPincode'].invalid && SellerControls['businessAddPincode'].touched ||  (SellerControls['businessAddPincode'].invalid && SellerControls['businessAddPincode'].touched)" class="errorMessage">Pincode is Required</span>
+                </div>
+            </div>
+          </div>
+          <div class="businessPassword">
+            <div class="newPassword">
+              <label for="newPassword" class="test" style="width: fit-content;">New Passsword: <span class="mandatory"></span></label>
+              <div class="inputs">
+                <input
+                  type="password"
+                  name="newPassword"
+                  id="newPassword"
+                  placeholder="Enter New Passwrd"
+                  formControlName="newPassword"
+                  *ngIf="!NewPassword"
+                />
+                <input
+                  type="text"
+                  name="newPassword"
+                  id="newPassword"
+                  placeholder="Enter New Passwrd"
+                  formControlName="newPassword"
+                  *ngIf="NewPassword"
+                />
+                <i class="fa-regular fa-eye" *ngIf="NewPassword" (click)="showNewPassword()"></i>
+                <i class="fa-regular fa-eye-slash" *ngIf="!NewPassword" (click)="showNewPassword()"></i>
+              </div>
+              <span *ngIf="signUpControls['newPassword'].invalid && signUpControls['newPassword'].touched ||  (signUpControls['newPassword'].invalid && signUpControls['newPassword'].touched)" class="errorMessage">New Password is Required</span>
+            </div>
+            <div class="confirmPassword">
+              <label for="confirmPassword" class="test" >Confirm New Passsword: <span class="mandatory"></span></label>
+              <div class="inputs">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  placeholder="Confirm New Password"
+                  formControlName="confirmPassword"
+                  *ngIf="!ConfirmPassword"
+                />
+                <input
+                  type="text"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  placeholder="Confirm New Password"
+                  formControlName="confirmPassword"
+                  *ngIf="ConfirmPassword"
+                />
+                <i class="fa-regular fa-eye" *ngIf="ConfirmPassword" (click)="showConfirmPassword()"></i>
+                <i class="fa-regular fa-eye-slash" *ngIf="!ConfirmPassword" (click)="showConfirmPassword()"></i>
+              </div>
+              <span *ngIf="signUpControls['confirmPassword'].invalid && signUpControls['confirmPassword'].touched ||  (signUpControls['confirmPassword'].invalid && signUpControls['confirmPassword'].touched)" class="errorMessage">Confirm Password is Required</span>
+            </div>
+          </div>
+          <button>Register</button>
+        </form>
+      </div>
   </div>
 </div>

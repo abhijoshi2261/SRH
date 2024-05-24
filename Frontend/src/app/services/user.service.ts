@@ -15,7 +15,11 @@ export class UserService {
 
   isUserSignUp = new BehaviorSubject<boolean>(false);
 
+  isSellerSignUp = new BehaviorSubject<boolean>(false);
+
   isUserLoggedIn = new EventEmitter<boolean>(false);
+
+  isSellerLoggedIn = new EventEmitter<boolean>(false);
 
   constructor(private http:HttpClient, private route:Router) { }
 
@@ -68,6 +72,42 @@ export class UserService {
     // console.log(data);
   }
 
+  sellerData:any=';'
+
+  sellersLogin(data:any){
+    this.http.get(`http://localhost:3000/sellers?businessEmail=${data.loginEmail}&newPassword=${data.loginPassword}`,{observe:'response'}).subscribe((result:any)=>{
+
+        console.log('Fetched Data',result);
+        
+
+        if(result && result.body && result.body.length){
+          console.log('Data Fetched',result);
+          console.log(result);
+
+          this.sellerData=result.body[0];
+          console.log(this.sellerData);
+          console.log(this.sellerData.role);
+          console.log(this.sellerData.ownerFirstName + this.sellerData.ownerLastName);
+          
+          if(this.sellerData.role==='seller'){
+            console.log(typeof(result.body));
+            
+          this.route.navigate(['sellerHome']);
+          localStorage.setItem('seller', JSON.stringify(this.sellerData));
+          }
+          this.isSellerSignUp.next(true);
+        }
+        else{
+          console.log('Unable to Fetch Data');
+          this.isSellerLoggedIn.emit(true);
+          
+        }
+        
+    })
+    // console.log(data.loginPassword);
+    // console.log(data);
+  }
+
 
   userDetails(data:any){
     this.http.get('http://localhost:3000/custDetails',{observe:'response'}).subscribe((res:any)=>{
@@ -102,12 +142,41 @@ export class UserService {
     }
 
 
-
-
-
-
-
+    addSellers(data:any){
+      this.http.post('http://localhost:3000/sellers',data).subscribe((result:any)=>{
+      if(result){
+        this.isSellerSignUp.next(true);
+        this.route.navigate(['sellerHome']);
+        localStorage.setItem('seller',JSON.stringify(result));
+      }else{
+       alert('user not signUp'); 
+      }
+      
+    })
   }
+
+
+      getSellersList(){
+       return this.http.get('http://localhost:3000/sellers?status=Active');
+      }
+
+      updateSeller(data:any,status:any){
+        console.log('Id:',data);
+        console.log('status:',status);
+        // this.http.patch(`http://localhost:3000/sellers/${data}`,status=status).subscribe((res:any)=>{
+        //   console.log('update',res);
+          
+        // })
+
+        
+      }
+
+
+
+    }
+
+    
+
 
 
 

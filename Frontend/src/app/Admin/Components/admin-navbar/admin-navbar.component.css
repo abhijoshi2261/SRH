@@ -1,0 +1,40 @@
+.defualtNavbar{
+    height: 6rem;
+    width: auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    background-color: #253380;
+}   
+
+.logo img{
+    width: 8rem;
+    height: 6rem;
+    margin-left:1.5rem ;
+}
+
+.menuOptions{
+    display: flex;
+    margin-right: 2rem;
+}
+
+.menuList{
+    width: 100%;
+    display: flex;
+    gap: 4rem;
+
+}
+
+li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

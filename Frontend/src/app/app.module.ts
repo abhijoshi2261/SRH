@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './Buyer/components/checkout/checkout.component';
 import { PaymentComponent } from './Buyer/components/payment/payment.component';
 import { OrderDetailsComponent } from './Buyer/components/order-details/order-details.component';
+import { AdminModule } from './Admin/admin.module';
 
 
 
@@ -36,7 +37,8 @@ import { OrderDetailsComponent } from './Buyer/components/order-details/order-de
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminModule
   ],
   exports:[NavbarComponent,BuyerHomeComponent,FooterComponent],
   providers: [],

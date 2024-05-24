@@ -21,6 +21,13 @@ export class ProductServiceService {
     return this.http.get('http://localhost:3000/products');
   }
 
+  addCategories(data:any){
+    this.http.post('http://localhost:3000/categories',data).subscribe((result:any)=>{
+      console.log('New Category',result);
+      
+    })
+  }
+
   getCategories(){
     return this.http.get('http://localhost:3000/categories');
   }
@@ -101,10 +108,14 @@ export class ProductServiceService {
           console.log('saved order id',out[0].id);
           console.log('data before put',data);
           
-          this.http.put(`http://localhost:3000/order/${out[0].id}`,data).subscribe((final:any)=>{
-            console.log('Put Data',final);
+          this.http.delete(`http://localhost:3000/order/${out[0].id}`,data).subscribe((final:any)=>{
+            console.log('Delete Data',final);
             
           })
+          this.http.post('http://localhost:3000/order',data).subscribe((result:any)=>{
+          console.log('posted',result);
+        })
+
         })
 
       }

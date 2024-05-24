@@ -17,4 +17,13 @@ export class AdminNavbarComponent {
 
   }
 
+  sellerVerification(){
+    if(localStorage.getItem('seller')){
+      console.log("Seller is Available");
+    }else{
+      console.log("Seller is Unavailable");
+      
+    }
+  }
+
 }

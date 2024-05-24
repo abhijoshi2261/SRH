@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SellerComponent } from './Components/seller/seller.component';
 import { AdminComponent } from './Components/admin/admin.component';
+import { SellersListComponent } from './Components/sellers-list/sellers-list.component';
+import { CategoryFormComponent } from './Components/category-form/category-form.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path:'adminHome',
     component:AdminComponent
+  },  
+  {
+    path:'sellersList',
+    component:SellersListComponent
+  },
+  {
+    path:'categoryForm',
+    component:CategoryFormComponent
   }
 
 ];

@@ -1,0 +1,27 @@
+<div class="sellerListContainer">
+    <div class="heading">
+        <h1>List of Sellers</h1>
+    </div>
+    <div class="sellerList">
+        <table>
+            <tr>
+                <th>Sr.No.</th>
+                <th>Sellers Id</th>
+                <th>Business Name</th>
+                <th>owner Name</th>
+                <th>Mobile No.</th>
+                <th>Email-ID</th>
+                <th>Actions</th>
+            </tr>
+            <tr *ngFor="let seller of sellerList; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{seller.id}}</td>
+                <td>{{seller.businessName}}</td>
+                <td>{{seller.ownerFirstName + ' ' + seller.ownerLastName}}</td>
+                <td>{{seller.businessMobile}}</td>
+                <td>{{seller.businessEmail}}</td>
+                <td><input type="checkbox" name="sellerStatus" id="sellerStatus" (change)="status(seller.id,seller.businessName)" checked></td>
+            </tr>
+        </table>
+    </div>
+</div>

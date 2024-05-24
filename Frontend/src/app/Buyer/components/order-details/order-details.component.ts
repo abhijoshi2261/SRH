@@ -44,8 +44,6 @@ export class OrderDetailsComponent {
 
       this.finalData = this.orderItems[0];
       console.log('Final Output',this.finalData);
-
-      console.log('after for loop',this.finalData);
     })
       
   }

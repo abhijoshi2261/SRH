@@ -1,0 +1,20 @@
+<div class="categoryFormContainer">
+    <div class="heading">
+        <h1>Category Form</h1>
+    </div>
+    <div class="formBody">
+        <form [formGroup]="categoryForm" (ngSubmit)="categories(categoryForm.value)">
+            <div class="fields">
+                <label for="name" class="mandatory">Category Name:</label>
+                <input type="text" placeholder="Enter Category Name" id="categoryName" formControlName="categoryName">
+                <span *ngIf="categoryControls['categoryName'].invalid && categoryControls['categoryName'].touched ||  (categoryControls['categoryName'].invalid && categoryControls['categoryName'].touched)" class="errorMessage">New Password is Required</span>
+            </div>
+            <div class="image">
+                <input type="file" name="categoryImage" id="categoryImage" id="categoryImage">
+            </div>
+            <div class="submit">
+                <button>Add Category</button>
+            </div>
+        </form>
+    </div>
+</div>

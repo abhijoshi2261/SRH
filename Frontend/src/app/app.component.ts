@@ -16,6 +16,7 @@ export class AppComponent {
 
   active:any;
 
+
   ngOnInit() {
     this.router.events.subscribe((routerEvent) => {
         if(routerEvent instanceof NavigationEnd) {
@@ -29,6 +30,15 @@ export class AppComponent {
               console.log('Data is False');
               
             }
+
+            if(routerEvent.url == '/admin/adminHome'){
+              console.log('Admin is True');
+              this.active = true;
+            }else{
+              console.log('Admin is False');
+              
+            }
+
 
             // this.active=routerEvent.url;
 

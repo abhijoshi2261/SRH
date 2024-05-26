@@ -1,0 +1,55 @@
+<div class="formContainer">
+    <div class="heading">
+        <h1>Product Form</h1>
+    </div>
+    <div class="formContent">
+        <form [formGroup]="productForm" (ngSubmit)="addProduct(productForm.value)" >
+            <div class="inputFields">
+                <div class="product">
+                    <label for="product" class="mandatory" style="width: fit-content;">Enter Product Name:</label>
+                    <input type="text" placeholder="Enter Product Name" formControlName="productName">
+                    <span *ngIf="productControls['productName'].invalid && productControls['productName'].touched ||  (productControls['productName'].invalid && productControls['productName'].touched)" class="errorMessage">Product Name is Required</span>
+                </div>
+                <div class="category">
+                    <label for="productCategory" class="mandatory" style="width: fit-content;">Select Product Category:</label>
+                    <input list="productCategory" formControlName="productCategory">
+                    <span *ngIf="productControls['productCategory'].invalid && productControls['productCategory'].touched ||  (productControls['productCategory'].invalid && productControls['productCategory'].touched)" class="errorMessage">Select atleast One</span>
+                    <datalist name="productCategory" id="productCategory">
+                        <option [value]="category.name" *ngFor="let category of categories">{{category.name}}</option>
+                    </datalist>
+                </div>
+                <div class="image">
+                    <label for="productImage" class="mandatory" style="width: fit-content;">Select Product Image:</label>
+                    <input type="file" name="productImage" id="productImage" formControlName="productImage">
+                    <span *ngIf="productControls['productImage'].invalid && productControls['productImage'].touched ||  (productControls['productImage'].invalid && productControls['productImage'].touched)" class="errorMessage">Product Image is Required</span>
+                </div>
+                <div class="product">
+                    <label for="brand" class="mandatory" style="width: fit-content;">Enter Product Brand:</label>
+                    <input type="text" placeholder="Enter Product Name" formControlName="productBrand">
+                    <span *ngIf="productControls['productBrand'].invalid && productControls['productBrand'].touched ||  (productControls['productBrand'].invalid && productControls['productBrand'].touched)" class="errorMessage">Product Brand is Required</span>
+                </div>
+                <div class="product">
+                    <label for="salePrice">Enter Product Saleprice:</label>
+                    <input type="number" placeholder="Enter Product Name" formControlName="productSaleprice">
+                </div>
+                <div class="product">
+                    <label for="mrp" class="mandatory" style="width: fit-content;">Enter Product MRP:</label>
+                    <input type="number" placeholder="Enter Product Name" formControlName="productMrp">
+                    <span *ngIf="productControls['productMrp'].invalid && productControls['productMrp'].touched ||  (productControls['productMrp'].invalid && productControls['productMrp'].touched)" class="errorMessage">Product MRP is Required</span>
+                </div>
+                <div class="product">
+                    <label for="discount" >Enter Product Discount:</label>
+                    <input type="number" placeholder="Enter Product Name" formControlName="productDiscount">
+                    
+                </div>
+                <div class="description">
+                    <label for="productDescription">Enter Product Description:</label>
+                    <textarea name="productDescription" id="productDescription" placeholder="Enter Product Description"></textarea>
+                </div>
+            </div>
+            <div class="submit">
+                <button>Add Product</button>
+            </div>                
+        </form>
+    </div>
+</div>

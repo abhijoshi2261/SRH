@@ -30,43 +30,58 @@ export class OrderDetailsComponent {
     console.log(typeof this.customerDetails)
     console.log(this.customerDetails);
     this.getOrderItems();
-    this.getUser();
+   
     
   }
   orderItems:any=[];
   finalData:any;
+  finalAmount:any;
+  userDetail:any;
+  length:any;
 
   getOrderItems(){
     this.product.getOrderProducts().subscribe((res:any)=>{
       this.orderItems = res;
       console.log("Data Retrieved",this.orderItems);
       console.log('type of data',typeof(this.orderItems));
+      console.log('Length of Orders: ',this.orderItems.length);
+      
+      
 
-      this.finalData = this.orderItems[0];
+      this.finalData = this.orderItems[this.orderItems.length-1];
+      this.userDetail = this.finalData[1];
       console.log('Final Output',this.finalData);
+      console.log('User Details',this.userDetail);
+      
+      this.finalAmount=this.finalData[2];
+
+    console.log('final Amount is:',this.finalAmount);
+
     })
       
   }
+
+  
 
   // getOrderItems(){
   //   this.product.getCartItems().subscribe((res:any)=>{
   //     this.orderItems = res;
   //   })
   // }
-  userDetail:any;
-  getUser(){
-    this.user.getUserDetails().subscribe((res:any)=>{
-     console.log('res',typeof(res));
-     console.log(res[0]);
-     this.userDetail=res[0];
-    //  if(this.userDetail.shippingAddressLine1){
-    //   console.log('shipping Confirm');
-    //  }else{
-    //   console.log('shipping Absent');
+  // userDetail:any;
+  // getUser(){
+  //   this.user.getUserDetails().subscribe((res:any)=>{
+  //    console.log('res',typeof(res));
+  //    console.log(res[0]);
+  //    this.userDetail=res[0];
+  //   //  if(this.userDetail.shippingAddressLine1){
+  //   //   console.log('shipping Confirm');
+  //   //  }else{
+  //   //   console.log('shipping Absent');
       
-    //  }
-    })
-  }
+  //   //  }
+  //   })
+  // }
 
     print(){
       window.print();

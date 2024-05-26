@@ -4,6 +4,7 @@ import { SellerComponent } from './Components/seller/seller.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { SellersListComponent } from './Components/sellers-list/sellers-list.component';
 import { CategoryFormComponent } from './Components/category-form/category-form.component';
+import { ProductformComponent } from './Components/productform/productform.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:'categoryForm',
     component:CategoryFormComponent
+  },
+  {
+    path:'productForm',
+    component:ProductformComponent
   }
 
 ];

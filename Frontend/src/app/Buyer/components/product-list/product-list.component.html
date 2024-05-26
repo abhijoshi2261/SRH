@@ -13,26 +13,20 @@
                 <a (click)="addToCart(item.id)"><i class="ri-shopping-cart-line"></i></a>
             </div>
             <div class="productListImage">
-                <img [src]="item.image" alt="Item Image">
+                <img [src]="item.productImage" alt="Item Image">
             </div>
             <hr>
             <div class="productListDescription">
-                <p id="brand">{{item.brand}}</p>
-                <p id="name">{{item.name}}</p>
-                <!-- <div class="rating">
-                    <a href="#"><i class="fa-regular fa-star"></i></a>
-                    <a href="#"><i class="fa-regular fa-star"></i></a>
-                    <a href="#"><i class="fa-regular fa-star"></i></a>
-                    <a href="#"><i class="fa-solid fa-star"></i></a>
-                    <a href="#"><i class="fa-solid fa-star"></i></a>
-                </div> -->
-                <div class="price" *ngIf="item.salePrice">
-                    <p id="salePrice">{{item.salePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p>
-                    <p id="mrp" style="text-decoration: line-through;">{{item.mrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                <p id="brand">{{item.productBrand}}</p>
+                <p id="name">{{item.productName}}</p>
+                
+                <div class="price" *ngIf="item.productSaleprice">
+                    <p id="salePrice">{{item.productSaleprice | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                    <p id="mrp" style="text-decoration: line-through;">{{item.productMrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
                 </div>
-                <div class="price" *ngIf="!item.salePrice">
+                <div class="price" *ngIf="!item.productSaleprice">
                     <!-- <p id="salePrice">{{item.salePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p> -->
-                    <p id="mrp" style="font-size: 1.2rem;">{{item.mrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                    <p id="mrp" style="font-size: 1.2rem;">{{item.productMrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
                 </div>
             </div>
         </div>

@@ -75,15 +75,6 @@ addressShow(){
   this.showShippingAddress=this.isChecked;
 }
 
-getCartItems(){
-  this.product.getCartItems().subscribe((result:any)=>{
-    // this.cartItems=result;
-    console.log(result);
-    
-  })
-}
-
-products:any;
 
 order(data:any){
   data.role='customer';
@@ -99,20 +90,18 @@ order(data:any){
   
 }
 
-orderedProducts:any;
+orderedProducts:any=[];
 
 userDetails:any;
 
 getOrderedProduct(data:any){
-  this.product.getOrderProducts().subscribe((result:any)=>{
-    console.log("Checkout Products",result);
-    this.orderedProducts=result;
-    this.route.navigate(['payments']);
-  })
-  // this.route.navigate(['payments']);
+  
   this.userDetails=data;
   console.log("formData",this.userDetails);
   this.user.userDetails(this.userDetails);
+  this.route.navigate(['payments']);
+  this.product.getCheckOutData(data);
+  this.product.addProductInOrder();
   
 }
 

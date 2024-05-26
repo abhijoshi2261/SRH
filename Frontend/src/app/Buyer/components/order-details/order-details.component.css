@@ -110,3 +110,7 @@ button{
 p{
     text-wrap: wrap;
 }
+
+.finalAmount{
+    border-top: 2px solid black;
+}

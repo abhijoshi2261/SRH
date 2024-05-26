@@ -1,0 +1,67 @@
+.formContainer{
+    height:30rem;
+    width: 40rem;
+    /* border: 1px solid black; */
+    margin: auto;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+}
+
+.inputFields{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    margin: auto;
+    width: 20rem;
+    font-size: 1.5rem;
+    /* border: 1px solid red; */
+}
+
+.product,.image,.category, .description{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.product input,.category input, .description textarea{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid crimson;
+}
+
+.description textarea{
+    font-size: 1rem;
+}
+
+input[type=file]::file-selector-button {
+    margin-top: 1rem;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: crimson;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+.submit{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    color: white;
+    background-color: crimson;
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+  
+span{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}

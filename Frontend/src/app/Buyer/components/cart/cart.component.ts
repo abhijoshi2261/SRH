@@ -30,13 +30,13 @@ export class CartComponent {
 
 
   add(index: number, val: number) {
-    this.cartItems[index].quantity++;
+    this.cartItems[index].productQuantity++;
     this.total();
   }
 
   remove(index: number, val: number) {
     if (val > 1) {
-      this.cartItems[index].quantity--;
+      this.cartItems[index].productQuantity--;
       this.total();
     }
   }
@@ -59,11 +59,11 @@ export class CartComponent {
     this.subTotal = 0;
     for (let i = 0; i < this.cartItems.length; i++) {
       const element = this.cartItems[i];
-      if (element.salePrice) { 
-        let productTotal = element.quantity * element.salePrice;
+      if (element.productSaleprice) { 
+        let productTotal = element.productQuantity * element.productSaleprice;
         subTotal = subTotal + productTotal;
       } else {
-        let productTotal = element.quantity * element.mrp;
+        let productTotal = element.productQuantity * element.productMrp;
         subTotal = subTotal + productTotal;
       }
     }
@@ -73,7 +73,8 @@ export class CartComponent {
 
   getCartItems(){
     this.product.getCartItems().subscribe((result:any)=>{
-      result.quantity=1;
+      result.productQuantity=1;
+      console.log("Products",result);
       this.cartItems=result;
       this.total();
     })
@@ -89,7 +90,7 @@ export class CartComponent {
             this.route.navigate(['checkout']);
             this.orderDetail=this.cartItems;
             this.orderDetail.finalTotal=this.subTotal;
-            this.product.addProductInOrder(this.orderDetail);
+            this.product.checkoutDetails(this.orderDetail);
             console.log("cart items are", this.cartItems);
             console.log(this.subTotal);
             console.log("Data to be send",this.orderDetail);

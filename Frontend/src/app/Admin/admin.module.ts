@@ -8,6 +8,7 @@ import { AdminNavbarComponent } from './Components/admin-navbar/admin-navbar.com
 import { SellersListComponent } from './Components/sellers-list/sellers-list.component';
 import { CategoryFormComponent } from './Components/category-form/category-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ProductformComponent } from './Components/productform/productform.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     AdminComponent,
     AdminNavbarComponent,
     SellersListComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    ProductformComponent
   ],
   imports: [
     CommonModule,

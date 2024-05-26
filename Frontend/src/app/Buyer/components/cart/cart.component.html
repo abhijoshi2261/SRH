@@ -13,19 +13,19 @@
     </tr>
     <tr *ngFor="let item of cartItems; let i = index">
       <td>{{i+1}}</td>
-      <td>{{ item.name }}</td>
-      <td id="quantity" *ngIf="item.salePrice">
-        <button (click)="remove(i, item.quantity)">-</button>
-        {{ item.quantity }}
-        <button (click)="add(i, item.quantity)">+</button>
+      <td>{{ item.productName }}</td>
+      <td id="quantity" *ngIf="item.productSaleprice">
+        <button (click)="remove(i, item.productQuantity)">-</button>
+        {{ item.productQuantity }}
+        <button (click)="add(i, item.productQuantity)">+</button>
       </td>
-      <td id="quantity" *ngIf="!item.salePrice">
-        <button (click)="remove(i, item.quantity)">-</button>
-        {{ item.quantity }}
-        <button (click)="add(i, item.quantity)">+</button>
+      <td id="quantity" *ngIf="!item.productSaleprice">
+        <button (click)="remove(i, item.productQuantity)">-</button>
+        {{ item.productQuantity }}
+        <button (click)="add(i, item.productQuantity)">+</button>
       </td>
-      <td *ngIf="item.salePrice">{{ item.quantity * item.salePrice }}</td>
-      <td *ngIf="!item.salePrice">{{ item.quantity * item.mrp }}</td>
+      <td *ngIf="item.productSaleprice">{{ item.productQuantity * item.productSaleprice }}</td>
+      <td *ngIf="!item.productSaleprice">{{ item.productQuantity * item.productMrp }}</td>
       <td class="actions">
         <i class="fa-regular fa-eye" (click)="viewProduct()"  id="view"></i>
         <i class="fa-regular fa-trash-can" (click)="deleteItems(item.id,i)"  id="delete"></i>

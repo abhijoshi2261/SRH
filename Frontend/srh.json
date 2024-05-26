@@ -108,48 +108,80 @@
   "products": [
     {
       "id": "1",
-      "image": "./assets/shampoo.jpg",
-      "name": "Shampoo",
-      "brand": "XYZ BRAND",
-      "salePrice": 200,
-      "mrp": 300,
-      "discount": 2
+      "productImage": "./assets/shampoo.jpg",
+      "productName": "Shampoo",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAND",
+      "productSaleprice": 200,
+      "productMrp": 300,
+      "productDescription": "",
+      "productDiscount": 2
     },
     {
       "id": "2",
-      "image": "./assets/perfume.jpg",
-      "name": "Perfume",
-      "brand": "XYZ BRAND",
-      "salePrice": null,
-      "mrp": 900,
-      "discount": 0
+      "productImage": "./assets/perfume.jpg",
+      "productName": "Perfume",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAND",
+      "productSaleprice": null,
+      "productMrp": 900,
+      "productDescription": "",
+      "productDiscount": 0
     },
     {
       "id": "3",
-      "image": "./assets/nivea combo.jpg",
-      "name": "nivea body care combo",
-      "brand": "XYZ BRAN",
-      "salePrice": 1000,
-      "mrp": 1500,
-      "discount": 0
+      "productImage": "./assets/nivea combo.jpg",
+      "productName": "nivea body care combo",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAN",
+      "productSaleprice": 1000,
+      "productMrp": 1500,
+      "productDescription": "",
+      "productDiscount": 0
     },
     {
       "id": "4",
-      "image": "./assets/men shoes.jpg",
-      "name": "Comfortable Office Shoes with brown",
-      "brand": "XYZ BRAND",
-      "salePrice": 1200,
-      "mrp": 1800,
-      "discount": 0
+      "productImage": "./assets/men shoes.jpg",
+      "productName": "Comfortable Office Shoes with brown",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAND",
+      "productSaleprice": 1200,
+      "productMrp": 1800,
+      "productDescription": "",
+      "productDiscount": 0
     },
     {
       "id": "5",
-      "image": "./assets/iphone.jpg",
-      "name": "IPhone 14 pro max red",
-      "brand": "XYZ BRAND",
-      "salePrice": 105000,
-      "mrp": 135000,
-      "discount": 0
+      "productImage": "./assets/iphone.jpg",
+      "productName": "IPhone 14 pro max red",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAND",
+      "productSaleprice": 105000,
+      "productMrp": 135000,
+      "productDescription": "",
+      "productDiscount": 0
+    },
+    {
+      "id": "1adc",
+      "productName": "Parle-G",
+      "productImage": "C:\\fakepath\\parle.jpg",
+      "productCategory": "Bakery",
+      "productBrand": "Parle",
+      "productSaleprice": "",
+      "productMrp": 10,
+      "productDiscount": 0,
+      "productDescription": ""
+    },
+    {
+      "id": "15ab",
+      "productName": "Parle-G",
+      "productImage": "C:\\fakepath\\parle.jpg",
+      "productCategory": "Bakery",
+      "productBrand": "Sunfeast",
+      "productSaleprice": 9.5,
+      "productMrp": 10,
+      "productDiscount": 0.5,
+      "productDescription": ""
     }
   ],
   "users": [
@@ -176,142 +208,343 @@
   ],
   "cart": [
     {
+      "id": "1",
+      "productImage": "./assets/shampoo.jpg",
+      "productName": "Shampoo",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAND",
+      "productSaleprice": 200,
+      "productMrp": 300,
+      "productDescription": "",
+      "productDiscount": 2,
+      "productQuantity": 1
+    },
+    {
+      "id": "2",
+      "productImage": "./assets/perfume.jpg",
+      "productName": "Perfume",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAND",
+      "productSaleprice": null,
+      "productMrp": 900,
+      "productDescription": "",
+      "productDiscount": 0,
+      "productQuantity": 1
+    },
+    {
       "id": "3",
-      "image": "./assets/nivea combo.jpg",
-      "name": "nivea body care combo",
-      "brand": "XYZ BRAN",
-      "salePrice": 1000,
-      "mrp": 1500,
-      "discount": 0,
-      "quantity": 1
+      "productImage": "./assets/nivea combo.jpg",
+      "productName": "nivea body care combo",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAN",
+      "productSaleprice": 1000,
+      "productMrp": 1500,
+      "productDescription": "",
+      "productDiscount": 0,
+      "productQuantity": 1
     },
     {
       "id": "4",
-      "image": "./assets/men shoes.jpg",
-      "name": "Comfortable Office Shoes with brown",
-      "brand": "XYZ BRAND",
-      "salePrice": 1200,
-      "mrp": 1800,
-      "discount": 0,
-      "quantity": 1
-    },
-    {
-      "id": "3",
-      "image": "./assets/nivea combo.jpg",
-      "name": "nivea body care combo",
-      "brand": "XYZ BRAN",
-      "salePrice": 1000,
-      "mrp": 1500,
-      "discount": 0,
-      "quantity": 1
+      "productImage": "./assets/men shoes.jpg",
+      "productName": "Comfortable Office Shoes with brown",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAND",
+      "productSaleprice": 1200,
+      "productMrp": 1800,
+      "productDescription": "",
+      "productDiscount": 0,
+      "productQuantity": 1
     },
     {
       "id": "5",
-      "image": "./assets/iphone.jpg",
-      "name": "IPhone 14 pro max red",
-      "brand": "XYZ BRAND",
-      "salePrice": 105000,
-      "mrp": 135000,
-      "discount": 0,
-      "quantity": 1
+      "productImage": "./assets/iphone.jpg",
+      "productName": "IPhone 14 pro max red",
+      "productCategory": "Personal Care",
+      "productBrand": "XYZ BRAND",
+      "productSaleprice": 105000,
+      "productMrp": 135000,
+      "productDescription": "",
+      "productDiscount": 0,
+      "productQuantity": 1
+    },
+    {
+      "id": "15ab",
+      "productName": "Parle-G",
+      "productImage": "C:\\fakepath\\parle.jpg",
+      "productCategory": "Bakery",
+      "productBrand": "Sunfeast",
+      "productSaleprice": 9.5,
+      "productMrp": 10,
+      "productDiscount": 0.5,
+      "productDescription": "",
+      "productQuantity": 1
     }
   ],
   "order": [
     {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
+      "0": [
+        {
+          "id": "1",
+          "productImage": "./assets/shampoo.jpg",
+          "productName": "Shampoo",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": 200,
+          "productMrp": 300,
+          "productDescription": "",
+          "productDiscount": 2,
+          "productQuantity": 1
+        },
+        {
+          "id": "2",
+          "productImage": "./assets/perfume.jpg",
+          "productName": "Perfume",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": null,
+          "productMrp": 900,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 1
+        },
+        {
+          "id": "3",
+          "productImage": "./assets/nivea combo.jpg",
+          "productName": "nivea body care combo",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAN",
+          "productSaleprice": 1000,
+          "productMrp": 1500,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 1
+        },
+        {
+          "id": "4",
+          "productImage": "./assets/men shoes.jpg",
+          "productName": "Comfortable Office Shoes with brown",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": 1200,
+          "productMrp": 1800,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 1
+        },
+        {
+          "id": "5",
+          "productImage": "./assets/iphone.jpg",
+          "productName": "IPhone 14 pro max red",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": 105000,
+          "productMrp": 135000,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 1
+        },
+        {
+          "id": "15ab",
+          "productName": "Parle-G",
+          "productImage": "C:\\fakepath\\parle.jpg",
+          "productCategory": "Bakery",
+          "productBrand": "Sunfeast",
+          "productSaleprice": 9.5,
+          "productMrp": 10,
+          "productDiscount": 0.5,
+          "productDescription": "",
+          "productQuantity": 1
+        }
+      ],
       "1": {
-        "id": "4",
-        "image": "./assets/men shoes.jpg",
-        "name": "Comfortable Office Shoes with brown",
-        "brand": "XYZ BRAND",
-        "salePrice": 1200,
-        "mrp": 1800,
-        "discount": 0,
-        "quantity": 1
+        "firstName": "Abhishek",
+        "lastName": "Joshi",
+        "email": "abhishek@joshi.com",
+        "mobileNo": "8149916360",
+        "date": ""
       },
-      "2": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "3": {
-        "id": "5",
-        "image": "./assets/iphone.jpg",
-        "name": "IPhone 14 pro max red",
-        "brand": "XYZ BRAND",
-        "salePrice": 105000,
-        "mrp": 135000,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "443d"
+      "2": 108309.5,
+      "id": "ff64"
     },
     {
-      "0": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
+      "0": [
+        {
+          "id": "1",
+          "productImage": "./assets/shampoo.jpg",
+          "productName": "Shampoo",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": 200,
+          "productMrp": 300,
+          "productDescription": "",
+          "productDiscount": 2,
+          "productQuantity": 1
+        },
+        {
+          "id": "2",
+          "productImage": "./assets/perfume.jpg",
+          "productName": "Perfume",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": null,
+          "productMrp": 900,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 1
+        },
+        {
+          "id": "3",
+          "productImage": "./assets/nivea combo.jpg",
+          "productName": "nivea body care combo",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAN",
+          "productSaleprice": 1000,
+          "productMrp": 1500,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 1
+        },
+        {
+          "id": "4",
+          "productImage": "./assets/men shoes.jpg",
+          "productName": "Comfortable Office Shoes with brown",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": 1200,
+          "productMrp": 1800,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 1
+        },
+        {
+          "id": "5",
+          "productImage": "./assets/iphone.jpg",
+          "productName": "IPhone 14 pro max red",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": 105000,
+          "productMrp": 135000,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 1
+        },
+        {
+          "id": "15ab",
+          "productName": "Parle-G",
+          "productImage": "C:\\fakepath\\parle.jpg",
+          "productCategory": "Bakery",
+          "productBrand": "Sunfeast",
+          "productSaleprice": 9.5,
+          "productMrp": 10,
+          "productDiscount": 0.5,
+          "productDescription": "",
+          "productQuantity": 1
+        }
+      ],
       "1": {
-        "id": "4",
-        "image": "./assets/men shoes.jpg",
-        "name": "Comfortable Office Shoes with brown",
-        "brand": "XYZ BRAND",
-        "salePrice": 1200,
-        "mrp": 1800,
-        "discount": 0,
-        "quantity": 1
+        "firstName": "Rushi",
+        "lastName": "Joshi",
+        "email": "abhishek@joshi.com",
+        "mobileNo": "8149916360",
+        "date": ""
       },
-      "2": {
-        "id": "3",
-        "image": "./assets/nivea combo.jpg",
-        "name": "nivea body care combo",
-        "brand": "XYZ BRAN",
-        "salePrice": 1000,
-        "mrp": 1500,
-        "discount": 0,
-        "quantity": 1
-      },
-      "3": {
-        "id": "5",
-        "image": "./assets/iphone.jpg",
-        "name": "IPhone 14 pro max red",
-        "brand": "XYZ BRAND",
-        "salePrice": 105000,
-        "mrp": 135000,
-        "discount": 0,
-        "quantity": 1
-      },
-      "id": "0ee7"
-    }
-  ],
-  "custDetails": [
+      "2": 108309.5,
+      "id": "69f5"
+    },
     {
-      "id": "616a",
-      "firstName": "Abhishek",
-      "lastName": "Joshi",
-      "email": "abhishek@joshi.com",
-      "mobileNo": "8149916360",
-      "date": ""
+      "0": [
+        {
+          "id": "1",
+          "productImage": "./assets/shampoo.jpg",
+          "productName": "Shampoo",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": 200,
+          "productMrp": 300,
+          "productDescription": "",
+          "productDiscount": 2,
+          "productQuantity": 2
+        },
+        {
+          "id": "2",
+          "productImage": "./assets/perfume.jpg",
+          "productName": "Perfume",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": null,
+          "productMrp": 900,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 3
+        },
+        {
+          "id": "3",
+          "productImage": "./assets/nivea combo.jpg",
+          "productName": "nivea body care combo",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAN",
+          "productSaleprice": 1000,
+          "productMrp": 1500,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 4
+        },
+        {
+          "id": "4",
+          "productImage": "./assets/men shoes.jpg",
+          "productName": "Comfortable Office Shoes with brown",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": 1200,
+          "productMrp": 1800,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 5
+        },
+        {
+          "id": "5",
+          "productImage": "./assets/iphone.jpg",
+          "productName": "IPhone 14 pro max red",
+          "productCategory": "Personal Care",
+          "productBrand": "XYZ BRAND",
+          "productSaleprice": 105000,
+          "productMrp": 135000,
+          "productDescription": "",
+          "productDiscount": 0,
+          "productQuantity": 6
+        },
+        {
+          "id": "15ab",
+          "productName": "Parle-G",
+          "productImage": "C:\\fakepath\\parle.jpg",
+          "productCategory": "Bakery",
+          "productBrand": "Sunfeast",
+          "productSaleprice": 9.5,
+          "productMrp": 10,
+          "productDiscount": 0.5,
+          "productDescription": "",
+          "productQuantity": 7
+        }
+      ],
+      "1": {
+        "firstName": "Abhishek",
+        "lastName": "Joshi",
+        "email": "abhishek@joshi.com",
+        "mobileNo": "8149916360",
+        "billingAddressLine1": "20/536,",
+        "billingAddressLine2": "Near Hotel Upvan,",
+        "billingAddressLine3": "Kolhapur Road,",
+        "billingAddressCity": "Ichalkaranji",
+        "billingAddressState": "MH",
+        "shippingAddressLine1": "19/137,",
+        "shippingAddressLine2": "C/o. Suwalalji Vyas",
+        "shippingAddressLine3": "Pareek Colony, Behind Laykar Theatre, Kolhapur Road, Near Potdar Hospital",
+        "shippingAddressCity": "Ichalkaranji",
+        "shippingAddressState": "MH",
+        "shippingCheck": true
+      },
+      "2": 643166.5,
+      "id": "f33b"
     }
   ],
   "sellers": [

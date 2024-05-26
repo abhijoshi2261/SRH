@@ -17,6 +17,12 @@ export class ProductServiceService {
 
   constructor(private http:HttpClient,private route:Router) {}
 
+  addProducts(data:any){
+    this.http.post('http://localhost:3000/products',data).subscribe((res:any)=>{
+      console.log("Addes Product",res);
+    })
+  }
+
   getProducts(){
     return this.http.get('http://localhost:3000/products');
   }
@@ -64,7 +70,7 @@ export class ProductServiceService {
     this.http.get(`http://localhost:3000/products?id=${id}`,{observe:'response'}).subscribe((result:any)=>{
       // console.log("Selected Product",result.body[0]);
       this.product = result.body[0];
-      this.product.quantity=1;
+      this.product.productQuantity=1;
       this.addProduct();
     })
     
@@ -91,14 +97,39 @@ export class ProductServiceService {
 
     orderedProducts:any;
 
-  addProductInOrder(data:any){
-      console.log('data before post',data);
-      
+    checkoutDetails(data:any){
+      console.log("Checkout Data",data);
+      this.orderedProducts=data;
+      console.log("Data in Service",this.orderedProducts);
+    }
+     
+    userDetail:any;
+    orderDetails:any=[];
+
+    getCheckOutData(data:any){
+      console.log("Data in Service2",this.orderedProducts);
+      console.log("user Details2",data);
+      this.userDetail=data;
+      // this.addProductInOrder();
+      // this.addProductInOrder(this.orderedProducts,this.userDetail)
+      this.orderDetails.push(this.orderedProducts);
+      this.orderDetails.push(this.userDetail);
+      this.orderDetails.push(this.orderedProducts.finalTotal);
+      // this.orderDetails = this.userDetail;
+    }
+
+  addProductInOrder(){
+
+    console.log("User3",this.userDetail);
+    console.log("product3",this.orderedProducts);
+    console.log("Final Details",this.orderDetails);
+    
+      console.log('data before post',this.orderDetails);
     this.http.get('http://localhost:3000/order',{observe:'response'}).subscribe((res:any)=>{
       console.log("Ordered Products",res);
       if(res){
         console.log('order is Empty');
-        this.http.post('http://localhost:3000/order',data).subscribe((result:any)=>{
+        this.http.post('http://localhost:3000/order',this.orderDetails).subscribe((result:any)=>{
           console.log('posted',result);
         })
         
@@ -106,27 +137,21 @@ export class ProductServiceService {
         console.log('order is present');
         this.http.get('http://localhost:3000/order').subscribe((out:any)=>{
           console.log('saved order id',out[0].id);
-          console.log('data before put',data);
-          
-          this.http.delete(`http://localhost:3000/order/${out[0].id}`,data).subscribe((final:any)=>{
+          console.log('data before put',this.orderDetails);      
+          this.http.delete(`http://localhost:3000/order/${out[0].id}`,this.orderDetails).subscribe((final:any)=>{
             console.log('Delete Data',final);
-            
           })
-          this.http.post('http://localhost:3000/order',data).subscribe((result:any)=>{
+          this.http.post('http://localhost:3000/order',this.orderDetails).subscribe((result:any)=>{
           console.log('posted',result);
         })
-
         })
-
       }
     })
-    
     
   }
 
   getOrderProducts(){
      return this.http.get('http://localhost:3000/order');
-    // return this.orderedProducts;
   }
 
 }

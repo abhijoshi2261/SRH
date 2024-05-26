@@ -7,7 +7,7 @@
             <div class="fields">
                 <label for="name" class="mandatory">Category Name:</label>
                 <input type="text" placeholder="Enter Category Name" id="categoryName" formControlName="categoryName">
-                <span *ngIf="categoryControls['categoryName'].invalid && categoryControls['categoryName'].touched ||  (categoryControls['categoryName'].invalid && categoryControls['categoryName'].touched)" class="errorMessage">New Password is Required</span>
+                <span *ngIf="categoryControls['categoryName'].invalid && categoryControls['categoryName'].touched ||  (categoryControls['categoryName'].invalid && categoryControls['categoryName'].touched)" class="errorMessage">Category Name is Required</span>
             </div>
             <div class="image">
                 <input type="file" name="categoryImage" id="categoryImage" id="categoryImage">

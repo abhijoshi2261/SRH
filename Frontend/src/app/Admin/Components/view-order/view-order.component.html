@@ -1,4 +1,7 @@
 <div class="orderDetails">
+    <div class="back">
+        <a routerLink="/orderList"><i class="fa-regular fa-circle-xmark"></i> Back</a>
+    </div>
     <div class="companyDetails">
         <h1>Sanjay Bhokare Group of Institutes, Miraj</h1>
         <p class="companyInfo">Shri Ambabai Talim Sanstha's Sanjay Bhokare Group Of Institutes Miraj Tilak Nagar, Miraj-Sangli Road, Post-Wanlesswadi, Miraj, Dist: Sangli - Pin-416414.</p>
@@ -53,15 +56,15 @@
                 {{ item.productQuantity }}
                 
               </td>
-              <td *ngIf="item.productSaleprice">{{ item.productQuantity * item.productSaleprice | indianNumber:2}}</td>
-              <td *ngIf="!item.productSaleprice">{{ item.productQuantity * item.productMrp | indianNumber:2 }}</td>
+              <td *ngIf="item.productSaleprice">{{ item.productQuantity * item.productSaleprice}}</td>
+              <td *ngIf="!item.productSaleprice">{{ item.productQuantity * item.productMrp}}</td>
             </tr>
-            <tr *ngFor="let item of orderItems[0]"></tr>
+            <!-- <tr *ngFor="let item of orderItems[0]"></tr> -->
             <tr>
               <td></td>
               <td></td>
               <td class="finalAmount"><h3>Final Amount</h3></td>
-              <td class="finalAmount"><h3>{{finalAmount | indianNumber:2  }}</h3></td>
+              <td class="finalAmount"><h3>{{finalAmount}}</h3></td>
             </tr>
           </table>
     </div>
@@ -76,4 +79,5 @@
     <div class="print">
         <button (click)="print()">Print</button>
     </div>
+
 </div>

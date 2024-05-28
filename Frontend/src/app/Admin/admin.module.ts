@@ -9,6 +9,11 @@ import { SellersListComponent } from './Components/sellers-list/sellers-list.com
 import { CategoryFormComponent } from './Components/category-form/category-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ProductformComponent } from './Components/productform/productform.component';
+import { OrderListComponent } from './Components/order-list/order-list.component';
+import { ViewOrderComponent } from './Components/view-order/view-order.component';
+import { IndianNumberPipe } from '../indian-number.pipe';
+import { StockFormComponent } from './Components/stock-form/stock-form.component';
+
 
 
 @NgModule({
@@ -18,7 +23,10 @@ import { ProductformComponent } from './Components/productform/productform.compo
     AdminNavbarComponent,
     SellersListComponent,
     CategoryFormComponent,
-    ProductformComponent
+    ProductformComponent,
+    OrderListComponent,
+    ViewOrderComponent,
+    StockFormComponent,
   ],
   imports: [
     CommonModule,

@@ -23,7 +23,9 @@ export class CategoryFormComponent {
 
 
   categories(data:any){
-      this.product.addCategories(data);
+      // this.product.addCategories(data);
+      console.log("Category Form Data", data);
+      
   }
 
 }

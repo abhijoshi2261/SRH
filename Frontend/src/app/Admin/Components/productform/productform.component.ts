@@ -48,6 +48,14 @@ export class ProductformComponent {
     this.product.addProducts(data);
   }
 
+  categoryId:any;
+
+  getCategory(event:Event){
+    this.categoryId = event.target as HTMLSelectElement;
+    console.log("Category Id",this.categoryId);
+    
+  }
+
 }
 
 

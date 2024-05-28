@@ -1,4 +1,7 @@
 <div class="categoryFormContainer">
+    <div class="back">
+        <a routerLink="/adminHome" style="color: black; text-decoration: none;"><i class="fa-regular fa-circle-xmark"></i> Back</a>
+    </div>
     <div class="heading">
         <h1>Category Form</h1>
     </div>
@@ -10,7 +13,9 @@
                 <span *ngIf="categoryControls['categoryName'].invalid && categoryControls['categoryName'].touched ||  (categoryControls['categoryName'].invalid && categoryControls['categoryName'].touched)" class="errorMessage">Category Name is Required</span>
             </div>
             <div class="image">
-                <input type="file" name="categoryImage" id="categoryImage" id="categoryImage">
+                <label for="productImage">Select Category Image:</label>
+                <input type="file" name="categoryImage" id="categoryImage" formControlName="categoryImage">
+                <span *ngIf="categoryControls['categoryImage'].invalid && categoryControls['categoryImage'].touched ||  (categoryControls['categoryImage'].invalid && categoryControls['categoryImage'].touched)" class="errorMessage">Category Image is Required</span>
             </div>
             <div class="submit">
                 <button>Add Category</button>

@@ -1,38 +1,34 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { ProductServiceService } from 'src/app/services/product-service.service';
-import { UserService } from 'src/app/services/user.service';
+import {IndianNumberPipe} from 'src/app/indian-number.pipe'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-order-details',
-  templateUrl: './order-details.component.html',
-  styleUrls: ['./order-details.component.css']
+  selector: 'app-view-order',
+  templateUrl: './view-order.component.html',
+  styleUrls: ['./view-order.component.css']
 })
-export class OrderDetailsComponent {
+export class ViewOrderComponent {
 
-  constructor(private product:ProductServiceService, private route:ActivatedRoute, private user:UserService){
-    console.log(route.pathFromRoot[1].snapshot.url[0].path);
-    
-  }
+  productId:any;
 
-  data: any=localStorage.getItem('customer');
-  customerDetails: any;
+  constructor(private route: ActivatedRoute, private product:ProductServiceService) { }
 
-  ngOnInit() {
-    // console.log(typeof(this.customerDetails));
-    // this.getOrderItems();
-    console.log(typeof this.data);
-    console.log("Before parsing");
-    console.log(this.data);
-    this.customerDetails=JSON.parse(this.data);
-    console.log('After parsing.....')
-    console.log(typeof this.customerDetails)
-    console.log(this.customerDetails);
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.productId = +params['id']; // '+' operator converts string to number
+      // Fetch product details using this.productId
+    });
     this.getOrderItems();
-   
-    
   }
+
+  getOrder(){
+    this.product.getOrder(this.productId).subscribe((result:any)=>{
+      console.log("View Product Details",result);
+      this.orderItems=result;
+    })
+  }
+
   orderItems:any=[];
   finalData:any;
   finalAmount:any;
@@ -42,7 +38,7 @@ export class OrderDetailsComponent {
   deliveryDate:any;
   orderNumber:any;
   getOrderItems(){
-    this.product.getOrderProducts().subscribe((res:any)=>{
+    this.product.getOrder(this.productId).subscribe((res:any)=>{
       this.orderItems = res;
       console.log("Data Retrieved",this.orderItems);
       console.log('type of data',typeof(this.orderItems));
@@ -70,10 +66,8 @@ export class OrderDetailsComponent {
       
   }
 
-
-
-    print(){
-      window.print();
-    }
+  print(){
+    window.print();
+  }
 
 }

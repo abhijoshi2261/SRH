@@ -1,0 +1,29 @@
+<div class="orderListConatainer">
+    <div class="back">
+        <a routerLink="/adminHome" style="color: black; text-decoration: none;"><i class="fa-regular fa-circle-xmark"></i> Back</a>
+    </div>
+    <div class="heading">
+        <h1>List of Orders</h1>
+    </div>
+    <div class="content">
+        {{orders[1]}}
+        <table>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Order No.</th>
+                <th>Order Date</th>
+                <th>Customer Name</th>
+                <th>Order Value</th>
+                <th>Order Status</th>
+            </tr>
+            <tr *ngFor="let order of orders; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{order[1].orderNumber}}</td>
+                <td>{{order[1].date | date: "dd MMM yyyy"}}</td>
+                <td>{{order[1].firstName + order[1].lastName}}</td>
+                <td>{{order[2]}}</td>
+                <td id="status"><p>{{order[1].orderStatus}}</p> <a (click)="viewOrder(order.id)">View Order</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

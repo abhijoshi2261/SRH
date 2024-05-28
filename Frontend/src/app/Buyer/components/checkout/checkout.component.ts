@@ -20,6 +20,10 @@ export class CheckoutComponent {
 
   constructor(private product:ProductServiceService, private route:Router, private user:UserService){}
 
+  ngOnInit() {
+    this.generateOrderNumber();
+  }
+
   //  customerFirstName = document.getElementById('firstName');
 
 
@@ -94,9 +98,37 @@ orderedProducts:any=[];
 
 userDetails:any;
 
+orderNumber:any;
+
+orderStatus='Created';
+
+generateOrderNumber(){
+  const currentDate = new Date();
+
+  // Get the date components
+  const day = String(currentDate.getDate()).padStart(2, '0');
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+  const year = String(currentDate.getFullYear()).slice(-2); // Get last two digits of the year
+
+  // Format the date as ddmmyy
+  const dateString = `${day}${month}${year}`;
+
+  // Generate a random 6-digit number
+  const randomNumber = Math.floor(100000 + Math.random() * 900000);
+
+  // Combine the date string and random number to get the order number
+   this.orderNumber = `${dateString}${randomNumber}`;
+
+}
+
 getOrderedProduct(data:any){
   
   this.userDetails=data;
+  this.userDetails.date=new Date();
+  this.userDetails.orderNumber=this.orderNumber;
+  this.userDetails.orderStatus = this.orderStatus;
+  // console.log("order Number is ",this.orderNumber);
+  
   console.log("formData",this.userDetails);
   this.user.userDetails(this.userDetails);
   this.route.navigate(['payments']);

@@ -1,0 +1,61 @@
+<div class="stockFormContainer">
+    <div class="back">
+        <a routerLink="/adminHome" style="color: black; text-decoration: none;"><i class="fa-regular fa-circle-xmark"></i> Back</a>
+    </div>
+    <div class="heading">
+        <h1>Stock Inward Form</h1>
+    </div>
+    <div class="content">
+        <form [formGroup]="stockForm" (ngSubmit)="inwardStock(stockForm.value)" >
+           <div class="inputs">
+            <div class="fields">
+                <label for="productId" class="mandatory" style="width: fit-content;">Select Product:</label>
+                <select name="productId" id="ProductId" (change)="getId($event)" formControlName="productId">
+                    <option value="">Select Product</option>
+                    <option [value]="product.id" *ngFor="let product of productList">{{product.productName}}</option>
+                </select>
+                <span *ngIf="stockformControls['productId'].invalid && stockformControls['productId'].touched ||  (stockformControls['productId'].invalid && stockformControls['productId'].touched)" class="errorMessage">Product is Required</span>
+            </div>
+            <div class="fields">
+                <label for="SellerId" class="mandatory" style="width: fit-content;">Select Store:</label>
+                <select name="SellerId" id="SellerId" (change)="getSeller($event)" formControlName="storeId">
+                    <option value="" selected>Select Product</option>
+                    <option [value]="seller.id" *ngFor="let seller of sellersList">{{seller.businessName}}</option>
+                </select>
+                <span *ngIf="stockformControls['storeId'].invalid && stockformControls['storeId'].touched ||  (stockformControls['storeId'].invalid && stockformControls['storeId'].touched)" class="errorMessage">Store is Required</span>
+            </div>
+            <div class="fields">
+                <label for="manufacturingDate" class="mandatory" style="width: fit-content;">Manufacturing Date:</label>
+                <input type="date" name="manufacturingDate" id="manufacturingDate" formControlName="manufacturingDate">
+                <span *ngIf="stockformControls['manufacturingDate'].invalid && stockformControls['manufacturingDate'].touched ||  (stockformControls['manufacturingDate'].invalid && stockformControls['manufacturingDate'].touched)" class="errorMessage">Manufacturing Date is Required</span>
+            </div>
+            <div class="fields">
+                <label for="expiryDate" class="mandatory" style="width: fit-content;">Expiry Date:</label>
+                <input type="date" name="expiryDate" id="expiryDate" formControlName="expiryDate">
+                <span *ngIf="stockformControls['expiryDate'].invalid && stockformControls['expiryDate'].touched ||  (stockformControls['expiryDate'].invalid && stockformControls['expiryDate'].touched)" class="errorMessage">Expiry Date is Required</span>
+            </div>
+            <div class="fields">
+                <label for="quantity" class="mandatory" style="width: fit-content;">Quantity:</label>
+                <input type="number" name="quantity" placeholder="Enter Inward Quantity" formControlName="quantity">
+                <span *ngIf="stockformControls['quantity'].invalid && stockformControls['quantity'].touched ||  (stockformControls['quantity'].invalid && stockformControls['quantity'].touched)" class="errorMessage">Inward Quantity is Required</span>
+            </div>
+            <div class="fields">
+                <label for="quantity" class="mandatory" style="width: fit-content;">Min. Limit Quantity:</label>
+                <input type="number" name="minLimit" placeholder="Enter Min. Limit Quantity" formControlName="minLimit">
+                <span *ngIf="stockformControls['minLimit'].invalid && stockformControls['minLimit'].touched ||  (stockformControls['minLimit'].invalid && stockformControls['minLimit'].touched)" class="errorMessage">Min. Limit Quantity is Required</span>
+            </div>
+            <div class="fields">
+                <label for="UOM" class="mandatory" style="width: fit-content;">Unit of Measurements (UOM)</label>
+                <select name="UOM" id="UOM" (change)="onChange($event)" formControlName="UOM">
+                    <option value="">Select UOM</option>
+                    <option *ngFor="let uom of standardUOMs" [value]="uom">{{ uom }}</option>
+                  </select>
+                  <span *ngIf="stockformControls['UOM'].invalid && stockformControls['UOM'].touched ||  (stockformControls['UOM'].invalid && stockformControls['UOM'].touched)" class="errorMessage">Unit of Measurement is Required</span>
+            </div>
+           </div>
+            <div class="submit">
+                <button>Inward Stock</button>
+            </div>
+        </form>
+    </div>
+</div>

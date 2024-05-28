@@ -5,6 +5,9 @@ import { AdminComponent } from './Components/admin/admin.component';
 import { SellersListComponent } from './Components/sellers-list/sellers-list.component';
 import { CategoryFormComponent } from './Components/category-form/category-form.component';
 import { ProductformComponent } from './Components/productform/productform.component';
+import { OrderListComponent } from './Components/order-list/order-list.component';
+import { ViewOrderComponent } from './Components/view-order/view-order.component';
+import { StockFormComponent } from './Components/stock-form/stock-form.component';
 
 const routes: Routes = [
   {
@@ -26,6 +29,18 @@ const routes: Routes = [
   {
     path:'productForm',
     component:ProductformComponent
+  },
+  {
+    path:'orderList',
+    component:OrderListComponent
+  },
+  {
+    path:'viewOrder',
+    component:ViewOrderComponent
+  },
+  {
+    path:'stockForm',
+    component:StockFormComponent
   }
 
 ];

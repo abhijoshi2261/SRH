@@ -15,6 +15,7 @@ import { CheckoutComponent } from './Buyer/components/checkout/checkout.componen
 import { PaymentComponent } from './Buyer/components/payment/payment.component';
 import { OrderDetailsComponent } from './Buyer/components/order-details/order-details.component';
 import { AdminModule } from './Admin/admin.module';
+import { IndianNumberPipe } from './indian-number.pipe';
 
 
 
@@ -31,7 +32,8 @@ import { AdminModule } from './Admin/admin.module';
     BuyerHomeComponent,
     CheckoutComponent,
     PaymentComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    IndianNumberPipe 
   ],
   imports: [
     BrowserModule,

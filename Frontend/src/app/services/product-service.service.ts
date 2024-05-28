@@ -154,4 +154,8 @@ export class ProductServiceService {
      return this.http.get('http://localhost:3000/order');
   }
 
+  getOrder(id:any){
+    return this.http.get(`http://localhost:3000/order?/${id}`);
+  }
+
 }

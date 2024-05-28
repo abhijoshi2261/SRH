@@ -10,51 +10,50 @@
     justify-content: center;
 }
 
-.inputFields{
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: flex-start; */
+    margin: auto;
+    align-items: center;
+    width: 80%;
+    /* gap:0 10rem; */
+}
+
+.inputs{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    /* width: 80%; */
 }
 
-.product,.image,.category, .description{
+.fields{
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
+    /* margin: 0 3rem; */
 }
-
-.product input{
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid crimson;
-}
-
-.category select, .description textarea{
-    border: none;
-    outline: none;
-    border-bottom: 1px solid crimson;
-    font-size: 1.5rem;
-}
-
-
 
 label{
-    font-size: 1.5rem;
-}
-
-.description textarea{
-    font-size: 1rem;
-}
-
-input[type=file]::file-selector-button {
     margin-top: 1rem;
-    padding: .2em .4em;
-    border-radius: .2em;
-    background-color: crimson;
     font-size: 1.5rem;
-    color: white;
-  }
+}
+
+input,select{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid crimson;
+    width: 35vw;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 .submit{
     display: flex;
@@ -68,8 +67,8 @@ button{
     font-size: 1.5rem;
     margin-top: 2rem;
 }
-  
+
 span{
     font-size: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }

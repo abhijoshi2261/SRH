@@ -31,7 +31,7 @@ export class AppComponent {
               
             }
 
-            if(routerEvent.url == '/admin/adminHome'){
+            if(routerEvent.url == '/admin/adminHome' || routerEvent.url == '/sellersList' || routerEvent.url == '/categoryForm' || routerEvent.url == '/productForm' || routerEvent.url == '/orderList' || routerEvent.url == '/viewOrder' || routerEvent.url == '/stockForm' || routerEvent.url == '/sellerHome' || routerEvent.url == '/adminHome'  ){
               console.log('Admin is True');
               this.active = true;
             }else{

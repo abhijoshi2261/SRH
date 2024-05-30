@@ -20,6 +20,7 @@ import { IndianNumberPipe } from './indian-number.pipe';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,7 @@ import { IndianNumberPipe } from './indian-number.pipe';
     CheckoutComponent,
     PaymentComponent,
     OrderDetailsComponent,
-    IndianNumberPipe 
+    IndianNumberPipe,
   ],
   imports: [
     BrowserModule,

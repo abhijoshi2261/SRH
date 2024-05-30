@@ -11,31 +11,29 @@
       <th>Amount</th>
       <th>Action</th>
     </tr>
-    <tr *ngFor="let item of cartItems; let i = index">
+    <tr *ngFor="let item of products; let i = index">
       <td>{{i+1}}</td>
       <td>{{ item.productName }}</td>
-      <td id="quantity" *ngIf="item.productSaleprice">
+      <td id="quantity" *ngIf="item.productSalePrice">
         <button (click)="remove(i, item.productQuantity)">-</button>
         {{ item.productQuantity }}
         <button (click)="add(i, item.productQuantity)">+</button>
       </td>
-      <td id="quantity" *ngIf="!item.productSaleprice">
+      <td id="quantity" *ngIf="!item.productSalePrice">
         <button (click)="remove(i, item.productQuantity)">-</button>
         {{ item.productQuantity }}
         <button (click)="add(i, item.productQuantity)">+</button>
       </td>
-      <td *ngIf="item.productSaleprice">{{ item.productQuantity * item.productSaleprice }}</td>
-      <td *ngIf="!item.productSaleprice">{{ item.productQuantity * item.productMrp }}</td>
+      <td *ngIf="item.productSalePrice">{{ item.productQuantity * item.productSalePrice }}</td>
+      <td *ngIf="!item.productSalePrice">{{ item.productQuantity * item.productMrp }}</td>
       <td class="actions">
         <i class="fa-regular fa-eye" (click)="viewProduct()"  id="view"></i>
-        <i class="fa-regular fa-trash-can" (click)="deleteItems(item.id,i)"  id="delete"></i>
+        <i class="fa-regular fa-trash-can" (click)="deleteItems(item.productId,i)"  id="delete"></i>
       </td>
     </tr>
-    <tr *ngFor="let item of cartItems"></tr>
   </table>
   <div class="cartFooter">
-    <button (click)="addProduct()" id="addProduct">Add Product</button>
-    <p>{{ subTotal | currency:'INR':'symbol-narrow':'.2-2' }}</p>
+    <p>{{ priceTotal | currency:'INR':'symbol-narrow':'.2-2' }}</p>
     <button (click)="checkout()" id="checkout">Checkout</button>
   </div>
 </div>

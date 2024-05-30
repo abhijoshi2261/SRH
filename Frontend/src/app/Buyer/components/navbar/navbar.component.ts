@@ -34,15 +34,14 @@ export class NavbarComponent {
   
 
   ngOnInit(): void {
-    this.product.cartLengthValue.subscribe((result: number) => {
-      this.cartCount = result;
-      if(result>0){
-        this.showCount=true;
-      }else{
-        this.showCount=false;
-      }
-    });    
 
+    this.showCount=false;
+    let cartStr:any = localStorage.getItem("cart");
+    let cart:any = JSON.parse(cartStr);
+    if (cart) {
+      this.showCount=true;
+      this.cartCount = cart.productIds.length;
+      }
   }
 
   showCategory() {

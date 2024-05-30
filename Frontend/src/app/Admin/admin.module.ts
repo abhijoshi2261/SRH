@@ -27,6 +27,7 @@ import { StockFormComponent } from './Components/stock-form/stock-form.component
     OrderListComponent,
     ViewOrderComponent,
     StockFormComponent,
+    
   ],
   imports: [
     CommonModule,

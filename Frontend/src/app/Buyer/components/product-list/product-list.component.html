@@ -10,7 +10,7 @@
                 <a (click)="addFavourite()"><i class="fa-regular fa-heart"></i></a>
                 <!-- <a (click)="addFavourite()" *ngIf="!favouriteItem"><i class="fa-regular fa-heart"></i></a> -->
                 <!-- <a (click)="addFavourite()" *ngIf="favouriteItem"><i class="fa-solid fa-heart"></i></a> -->
-                <a (click)="addToCart(item.id)"><i class="ri-shopping-cart-line"></i></a>
+                <a (click)="addToCart(item.productId)"><i class="ri-shopping-cart-line"></i></a>
             </div>
             <div class="productListImage">
                 <img [src]="item.productImage" alt="Item Image">

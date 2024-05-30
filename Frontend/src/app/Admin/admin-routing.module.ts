@@ -9,6 +9,7 @@ import { OrderListComponent } from './Components/order-list/order-list.component
 import { ViewOrderComponent } from './Components/view-order/view-order.component';
 import { StockFormComponent } from './Components/stock-form/stock-form.component';
 
+
 const routes: Routes = [
   {
     path:'sellerHome',

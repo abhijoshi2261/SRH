@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { carousel, topSelling, weekTrending } from 'src/app/dataTypes';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
@@ -9,10 +10,10 @@ import { ProductServiceService } from 'src/app/services/product-service.service'
 })
 export class BuyerHomeComponent {
 
-  constructor(private product:ProductServiceService){
+  constructor(private productService:ProductServiceService){
     this.getCategories();
     this.getTopTrending();
-    this.getTopSelling();
+    this.getProduct();
     this.getCarousel();
   }
 
@@ -26,7 +27,7 @@ export class BuyerHomeComponent {
   currentIndex: number = 0;
   categories:any;
   topTrending:any;
-  topSelling:any;
+  products:any = [];
   carouselArr:any=[];
 
 
@@ -43,31 +44,50 @@ export class BuyerHomeComponent {
     
 
     getCarousel(){
-      this.product.getCarousel().subscribe((result)=>{
+      this.productService.getCarousel().subscribe((result)=>{
         this.carouselArr=result;
       })
     }
 
 
     getCategories(){
-      this.product.getCategories().subscribe((result)=>{
+      this.productService.getCategories().subscribe((result)=>{
         this.categories=result;
       })
     }
 
     getTopTrending(){
-      this.product.getTopTrending().subscribe((result)=>{
+      this.productService.getTopTrending().subscribe((result)=>{
         // console.log("Top Trending Products",result);
         this.topTrending=result;
       })
     }
 
-    getTopSelling(){
-      this.product.getTopSelling().subscribe((result)=>{
-        // console.log("Top Selling Products",result);
-        this.topSelling=result;
-      })
+    getProduct(){
+      this.productService.getProducts().subscribe((result:any)=>{
+        this.products = result;
+        for(var i = 0; i < this.products.length; i++) {
+          const productElement = this.products[i];
+          this.productService.getProductImage(productElement.productId).subscribe((imgResponse:any)=>{
+            console.log(imgResponse);
+            if (imgResponse) {
+              console.log("Image is not null", imgResponse);
+              const base64Data:any = imgResponse.picByte;
+              const imgData = 'data:image/jpeg;base64,' + base64Data;
+              productElement.productImageSrc = imgData;
+            }
+          }
+        );
+        }
+      });
     }
+
+    // getTopSelling(){
+    //   this.productService.getTopSelling().subscribe((result)=>{
+    //     // console.log("Top Selling Products",result);
+    //     this.topSelling=result;
+    //   })
+    // }
 
   favouriteItem:boolean=false;
 
@@ -77,7 +97,9 @@ export class BuyerHomeComponent {
   }
 
   addToCart(item:any){
-      this.product.addToCart(item);
+      console.log("Item",item);
+      this.productService.addToCart(item);
+      
   }
 
 

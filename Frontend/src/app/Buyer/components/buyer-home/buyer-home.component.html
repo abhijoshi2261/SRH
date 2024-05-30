@@ -41,7 +41,7 @@
                 <a (click)="addFavourite()"><i class="fa-regular fa-heart"></i></a>
                 <!-- <a (click)="addFavourite()" *ngIf="!favouriteItem"><i class="fa-regular fa-heart"></i></a> -->
                 <!-- <a (click)="addFavourite()" *ngIf="favouriteItem"><i class="fa-solid fa-heart"></i></a> -->
-                <a (click)="addToCart(item.id)"><i class="ri-shopping-cart-line"></i></a>
+                <a (click)="addToCart(item.productId)"><i class="ri-shopping-cart-line"></i></a>
             </div>
             <div class="weekImage">
                 <img [src]="item.productImage" alt="Item Image">
@@ -50,11 +50,11 @@
             <div class="weekDescription">
                 <p id="brand">{{item.productBrand}}</p>
                 <p id="name">{{item.productName}}</p>
-                <div class="price" *ngIf="item.productSaleprice">
-                    <p id="salePrice">{{item.productSaleprice | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                <div class="price" *ngIf="item.productSalePrice">
+                    <p id="salePrice">{{item.productSalePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p>
                     <p id="mrp" style="text-decoration: line-through;">{{item.productMrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
                 </div>
-                <div class="price" *ngIf="!item.productSaleprice">
+                <div class="price" *ngIf="!item.productSalePrice">
                    <!-- <p id="salePrice">{{item.salePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p> -->
                     <p id="mrp" style="font-size: 1.2rem;">{{item.productMrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
                 </div>
@@ -69,32 +69,32 @@
 
 <div class="topselling">
     <div class="topsellingHeader">
-        <h2>Top Selling Products</h2>
+        <h2>List of Products</h2>
         <a routerLink="productList"><small>View All</small></a>
     </div>
     <hr>
     <div class="topsellingContent">
-        <div class="topsellingItems" *ngFor="let item of topSelling">
+        <div class="topsellingItems" *ngFor="let item of products">
             <div class="discount" *ngIf="item.productDiscount">- {{item.productDiscount}}%</div>
             <div class="actions">
                 <a (click)="addFavourite()"><i class="fa-regular fa-heart"></i></a>
                 <!-- <a (click)="addFavourite()" *ngIf="!favouriteItem"><i class="fa-regular fa-heart"></i></a> -->
                 <!-- <a (click)="addFavourite()" *ngIf="favouriteItem"><i class="fa-solid fa-heart"></i></a> -->
-                <a (click)="addToCart(item.id)"><i class="ri-shopping-cart-line"></i></a>
+                <a (click)="addToCart(item.productId)"><i class="ri-shopping-cart-line"></i></a>
             </div>
             <div class="topsellingImage">
-                <img [src]="item.productImage" alt="{{item.productName}} Image">
+                <img [src]="item.productImageSrc" alt="{{item.productName}} Image">
             </div>
             <hr>
             <div class="topsellingDescription">
                 <p id="brand">{{item.productBrand}}</p>
                 <p id="name">{{item.productName}}</p>
                 
-                <div class="price" *ngIf="item.productSaleprice">
-                    <p id="salePrice">{{item.productSaleprice | currency:'INR':'symbol-narrow':'.2-2'}}</p>
+                <div class="price" *ngIf="item.productSalePrice">
+                    <p id="salePrice">{{item.productSalePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p>
                     <p id="mrp" style="text-decoration: line-through;">{{item.productMrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
                 </div>
-                <div class="price" *ngIf="!item.productSaleprice">
+                <div class="price" *ngIf="!item.productSalePrice">
                     <!-- <p id="salePrice">{{item.salePrice | currency:'INR':'symbol-narrow':'.2-2'}}</p> -->
                     <p id="mrp" style="font-size: 1.2rem;">{{item.productMrp | currency:'INR':'symbol-narrow':'.2-2'}}</p>
                 </div>

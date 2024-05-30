@@ -74,6 +74,12 @@ export class OrderDetailsComponent {
 
     print(){
       window.print();
+      let cartStr:any = localStorage.getItem("cart");
+      let cart = JSON.parse(cartStr);
+      console.log("Final Cart is",cart);
+      console.log("cartId is ",cart.cartId);
+      
+      this.product.deleteCart(cart.cartId);
     }
 
 }

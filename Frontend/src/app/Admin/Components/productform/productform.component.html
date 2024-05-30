@@ -29,21 +29,21 @@
                 
                 
                 <div class="product">
-                    <label for="salePrice">Enter Product Saleprice:</label>
-                    <input type="number" placeholder="Enter Product Name" formControlName="productSaleprice">
+                    <label for="salePrice">Enter Product SalePrice:</label>
+                    <input type="number" placeholder="Enter Product Saleprice" formControlName="productSalePrice">
                 </div>
                 <div class="product">
                     <label for="mrp" class="mandatory" style="width: fit-content;">Enter Product MRP:</label>
-                    <input type="number" placeholder="Enter Product Name" formControlName="productMrp">
+                    <input type="number" placeholder="Enter Product MRP" formControlName="productMrp">
                     <span *ngIf="productControls['productMrp'].invalid && productControls['productMrp'].touched ||  (productControls['productMrp'].invalid && productControls['productMrp'].touched)" class="errorMessage">Product MRP is Required</span>
                 </div>
                 <div class="product">
                     <label for="discount" >Enter Product Discount:</label>
-                    <input type="number" placeholder="Enter Product Name" formControlName="productDiscount">
+                    <input type="number" placeholder="Enter Product Discount" formControlName="productDiscount">
                 </div>
                 <div class="image">
                     <label for="productImage" class="mandatory" style="width: fit-content;">Select Product Image:</label>
-                    <input type="file" name="productImage" id="productImage" formControlName="productImage">
+                    <input type="file" name="productImage" id="productImage" formControlName="productImage" (change)="selectFile($event)">
                     <span *ngIf="productControls['productImage'].invalid && productControls['productImage'].touched ||  (productControls['productImage'].invalid && productControls['productImage'].touched)" class="errorMessage">Product Image is Required</span>
                 </div>
                 <div class="description">
